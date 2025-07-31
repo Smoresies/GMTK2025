@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddu00bxi35taq"]
+[gd_scene load_steps=3 format=3 uid="uid://ddu00bxi35taq"]
+
+[ext_resource type="Script" uid="uid://421uunl7sso0" path="res://scenes/end.gd" id="1_mwn6m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
 [node name="End" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_mwn6m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -21,3 +26,5 @@ color = Color(1, 0.129309, 0.32608, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_xdx16")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

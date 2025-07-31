@@ -42,4 +42,4 @@ position = Vector2(720, 310)
 position = Vector2(126, 425)
 
 [node name="Pipe" parent="." instance=ExtResource("5_tpt06")]
-position = Vector2(590, 310)
+position = Vector2(214, 273)

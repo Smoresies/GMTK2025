@@ -49,6 +49,7 @@ disabled = true
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_8x3ej")
 
+[connection signal="area_shape_entered" from="Area2D2" to="." method="checker_triggered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
 [connection signal="mouse_entered" from="Area2D3" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D3" to="." method="_on_area_2d_mouse_exited"]

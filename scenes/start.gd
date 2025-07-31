@@ -3,8 +3,8 @@ extends Area2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("space"):
 		collision_shape_2d.disabled = false
 		await get_tree().create_timer(0.1).timeout
-		# collision_shape_2d.disabled = true
+		collision_shape_2d.disabled = true
