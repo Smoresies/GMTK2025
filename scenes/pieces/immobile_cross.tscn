@@ -1,22 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://dayysnfdinqpt"]
+[gd_scene load_steps=5 format=3 uid="uid://4upbgp64rkfq"]
 
-[ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_2t7x4"]
-[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="2_2t7x4"]
+[ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_s5x2h"]
+[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="2_ks02s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_832ky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3ej"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x3ej"]
-
-[node name="Cross" type="Node2D" node_paths=PackedStringArray("colliders") groups=["draggable"]]
-script = ExtResource("1_2t7x4")
+[node name="ImmobileCross" type="Node2D" node_paths=PackedStringArray("colliders") groups=["draggable"]]
+script = ExtResource("1_s5x2h")
 colliders = [NodePath("Area2D/SendDown"), NodePath("Area2D5/SendUp"), NodePath("Area2D4/SendLeft"), NodePath("Area2D6/SendRight")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(3.75, 3.75)
-texture = ExtResource("2_2t7x4")
+texture = ExtResource("2_ks02s")
 
 [node name="Area2D2" type="Area2D" parent="."]
 collision_layer = 0
@@ -94,16 +92,7 @@ scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_8x3ej")
 disabled = true
 
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_8x3ej")
-
 [connection signal="area_shape_entered" from="Area2D2" to="." method="checker_triggered"]
 [connection signal="area_shape_entered" from="Area2D7" to="." method="checker_triggered"]
 [connection signal="area_shape_entered" from="Area2D8" to="." method="checker_triggered"]
 [connection signal="area_shape_entered" from="Area2D9" to="." method="checker_triggered"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
-[connection signal="mouse_entered" from="Area2D3" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D3" to="." method="_on_area_2d_mouse_exited"]

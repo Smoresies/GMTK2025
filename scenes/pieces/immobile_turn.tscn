@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgfigq21gl1gm"]
+
+[ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_utqeg"]
+[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="2_ggd8x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x3ej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ab3bn"]
+
+[node name="ImmobileTurn" type="Node2D" node_paths=PackedStringArray("colliders") groups=["draggable"]]
+script = ExtResource("1_utqeg")
+colliders = [NodePath("Area2D/SendRight"), NodePath("Area2D4/SendLeft")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("2_ggd8x")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="SendRight" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 64)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_8x3ej")
+disabled = true
+
+[node name="Area2D4" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="SendLeft" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(-64, 0)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_8x3ej")
+disabled = true
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Checker" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-64, 0)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ab3bn")
+
+[node name="Area2D5" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Checker" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ab3bn")
+
+[connection signal="area_shape_entered" from="Area2D2" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D5" to="." method="checker_triggered"]
