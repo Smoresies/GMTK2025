@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0e6p2sm7c4va"]
+[gd_scene load_steps=7 format=3 uid="uid://b0e6p2sm7c4va"]
 
 [ext_resource type="Script" uid="uid://c85utvmtdanpx" path="res://scenes/piece_spawner.gd" id="1_nvhmr"]
 [ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pieces/pipe.tscn" id="2_q5hwa"]
 [ext_resource type="Texture2D" uid="uid://bbjnl0gvngfgx" path="res://assets/StraightPipe.png" id="3_5cmve"]
+[ext_resource type="FontFile" uid="uid://cul14a312dsdb" path="res://assets/fonts/Quicksand-Regular.otf" id="4_5cmve"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2enb5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8oumt"]
+font = ExtResource("4_5cmve")
+font_size = 20
 
 [node name="PieceSpawner" type="Node2D"]
 script = ExtResource("1_nvhmr")
@@ -18,6 +23,15 @@ sprite = ExtResource("3_5cmve")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_2enb5")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 5
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 54.0
+offset_bottom = 33.0
+text = "3"
+label_settings = SubResource("LabelSettings_8oumt")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

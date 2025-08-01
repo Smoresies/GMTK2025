@@ -6,17 +6,19 @@ extends Node2D
 @export var sprite : CompressedTexture2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var initialSize: Vector2 = scale
+@onready var label: Label = $Label
 
 var hovering: bool = false
 
 func _ready():
 	sprite_2d.texture = sprite
-
+	label.text = str(num_pieces)
 
 func _process(_delta: float) -> void:
 	if hovering:
 		if Input.is_action_just_pressed("click") and num_pieces > 0:
 			num_pieces -= 1
+			label.text = str(num_pieces)
 			var new_piece = piece.instantiate()
 			new_piece.position = Vector2(global_position.x + 126, global_position.y)
 			new_piece.deleting_self.connect(_piece_deleted)
@@ -25,6 +27,7 @@ func _process(_delta: float) -> void:
 
 func _piece_deleted():
 	num_pieces += 1
+	label.text = str(num_pieces)
 	# print("A PIECE WAS DELETED!")
 
 
