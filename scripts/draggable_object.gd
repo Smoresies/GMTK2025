@@ -12,17 +12,20 @@ var last_body : BoardSpace = null
 func _process(_delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
-			initialPos = global_position
-			offset = get_global_mouse_position() - global_position
-			global.is_dragging = true
+			if not global.is_dragging:
+				initialPos = global_position
+				offset = get_global_mouse_position() - global_position
+				global.is_dragging = true
+			elif global.is_dragging:
+				draggable = false
 		if Input.is_action_just_pressed("rotate"):
 			rotation_degrees += 90
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
-			var tween = get_tree().create_tween()
 			if is_inside_droppable and body_ref:
+				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
 				if last_body:
 					last_body.is_empty = true
@@ -31,9 +34,10 @@ func _process(_delta):
 				body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 				body_ref = null
 			elif last_body: # Prevent weird offset bug
+				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", last_body.position, 0.2).set_ease(Tween.EASE_OUT)
-			else:
-				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
+			#else:
+				#tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 			# draggable = false
 
 

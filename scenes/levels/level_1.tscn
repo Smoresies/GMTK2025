@@ -7,42 +7,44 @@
 [ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pieces/pipe.tscn" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="6_sk5k4"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node" type="Node"]
 
-[node name="End" parent="." instance=ExtResource("1_nsrm0")]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="End" parent="Node2D" instance=ExtResource("1_nsrm0")]
 position = Vector2(704, 610)
 
-[node name="Start" parent="." instance=ExtResource("2_x42e6")]
+[node name="Start" parent="Node2D" instance=ExtResource("2_x42e6")]
 position = Vector2(576, 610)
 
-[node name="BoardSpaceList" type="Node2D" parent="."]
+[node name="BoardSpaceList" type="Node2D" parent="Node2D"]
 
-[node name="BoardSpace9" parent="BoardSpaceList" instance=ExtResource("3_6761a")]
+[node name="BoardSpace9" parent="Node2D/BoardSpaceList" instance=ExtResource("3_6761a")]
 position = Vector2(576, 482)
 
-[node name="BoardSpace10" parent="BoardSpaceList" instance=ExtResource("3_6761a")]
+[node name="BoardSpace10" parent="Node2D/BoardSpaceList" instance=ExtResource("3_6761a")]
 position = Vector2(704, 482)
 
-[node name="ImmobileTurn" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="ImmobileTurn" parent="Node2D/BoardSpaceList" instance=ExtResource("4_6761a")]
 position = Vector2(832, 610)
 rotation = 1.5708
 
-[node name="ImmobileTurn2" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="ImmobileTurn2" parent="Node2D/BoardSpaceList" instance=ExtResource("4_6761a")]
 position = Vector2(448, 612)
 rotation = -3.14159
 
-[node name="ImmobileTurn3" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="ImmobileTurn3" parent="Node2D/BoardSpaceList" instance=ExtResource("4_6761a")]
 position = Vector2(832, 482)
 
-[node name="ImmobileTurn4" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="ImmobileTurn4" parent="Node2D/BoardSpaceList" instance=ExtResource("4_6761a")]
 position = Vector2(448, 482)
 rotation = -1.5708
 
-[node name="Pipe" parent="." instance=ExtResource("5_sk5k4")]
-position = Vector2(222, 319)
-
-[node name="Pipe2" parent="." instance=ExtResource("5_sk5k4")]
+[node name="Pipe2" parent="Node2D" instance=ExtResource("5_sk5k4")]
 position = Vector2(425, 233)
 
-[node name="TPiece" parent="." instance=ExtResource("6_sk5k4")]
+[node name="TPiece" parent="Node2D" instance=ExtResource("6_sk5k4")]
 position = Vector2(838, 243)
+
+[node name="Pipe" parent="Node2D" instance=ExtResource("5_sk5k4")]
+position = Vector2(226, 317)
