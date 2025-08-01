@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyfl2f2t2auf3"]
+[gd_scene load_steps=11 format=3 uid="uid://dyfl2f2t2auf3"]
 
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/board_space.tscn" id="1_lndbk"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/end.tscn" id="2_0qcrn"]
 [ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/start.tscn" id="3_3iykq"]
+[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/piece_spawner.tscn" id="4_xqhf0"]
+[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="5_os2q3"]
+[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="6_j18pg"]
+[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="7_4bsc8"]
+[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="8_f0e1c"]
+[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="9_n737r"]
+[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="10_lg6wu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -97,3 +104,21 @@ position = Vector2(704, 354)
 
 [node name="BoardSpace28" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
 position = Vector2(960, 354)
+
+[node name="PipeSpawner" parent="." instance=ExtResource("4_xqhf0")]
+position = Vector2(35, 650)
+
+[node name="TurnSpawner" parent="." instance=ExtResource("4_xqhf0")]
+position = Vector2(35, 550)
+piece = ExtResource("5_os2q3")
+sprite = ExtResource("6_j18pg")
+
+[node name="TSpawner" parent="." instance=ExtResource("4_xqhf0")]
+position = Vector2(35, 450)
+piece = ExtResource("7_4bsc8")
+sprite = ExtResource("8_f0e1c")
+
+[node name="CrossSpawner" parent="." instance=ExtResource("4_xqhf0")]
+position = Vector2(35, 350)
+piece = ExtResource("9_n737r")
+sprite = ExtResource("10_lg6wu")

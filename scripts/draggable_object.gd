@@ -22,6 +22,9 @@ func _process(_delta):
 				draggable = false
 				return
 		elif Input.is_action_just_pressed("right_click"):
+			if last_body:
+				last_body.is_empty = true
+				# print("Fixed the body!")
 			emit_signal("deleting_self")
 			queue_free()
 			return
