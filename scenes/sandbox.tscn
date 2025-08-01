@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/board_space.tscn" id="2_a8pr3"]
 [ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/start.tscn" id="3_a8pr3"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/end.tscn" id="4_j6lu3"]
-[ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pipe.tscn" id="5_tpt06"]
-[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/turn.tscn" id="6_16ffl"]
+[ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pieces/pipe.tscn" id="5_tpt06"]
+[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_16ffl"]
 
 [node name="Sandbox" type="Node2D"]
 
