@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddu00bxi35taq"]
 
-[ext_resource type="Script" uid="uid://421uunl7sso0" path="res://scenes/end.gd" id="1_mwn6m"]
+[ext_resource type="Script" uid="uid://421uunl7sso0" path="res://scripts/end.gd" id="1_mwn6m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
 [node name="End" type="Area2D"]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 script = ExtResource("1_mwn6m")
 
 [node name="ColorRect" type="ColorRect" parent="."]

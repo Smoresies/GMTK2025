@@ -15,6 +15,8 @@ func _process(_delta):
 			initialPos = global_position
 			offset = get_global_mouse_position() - global_position
 			global.is_dragging = true
+		if Input.is_action_just_pressed("rotate"):
+			rotation_degrees += 90
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
