@@ -30,6 +30,8 @@ func _process(_delta):
 				body_ref.is_empty = false
 				body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 				body_ref = null
+			elif last_body: # Prevent weird offset bug
+				tween.tween_property(self, "position", last_body.position, 0.2).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 			# draggable = false
