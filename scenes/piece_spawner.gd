@@ -19,7 +19,13 @@ func _process(_delta: float) -> void:
 			num_pieces -= 1
 			var new_piece = piece.instantiate()
 			new_piece.position = Vector2(global_position.x + 126, global_position.y)
+			new_piece.deleting_self.connect(_piece_deleted)
 			self.get_parent().add_child(new_piece)
+
+
+func _piece_deleted():
+	num_pieces += 1
+	# print("A PIECE WAS DELETED!")
 
 
 func _on_area_2d_mouse_entered() -> void:

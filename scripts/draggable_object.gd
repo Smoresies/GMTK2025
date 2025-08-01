@@ -9,6 +9,8 @@ var initialPos: Vector2
 var last_body : BoardSpace = null
 @onready var initialSize: Vector2 = scale
 
+signal deleting_self()
+
 func _process(_delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
@@ -18,6 +20,11 @@ func _process(_delta):
 				global.is_dragging = true
 			elif global.is_dragging:
 				draggable = false
+				return
+		elif Input.is_action_just_pressed("right_click"):
+			emit_signal("deleting_self")
+			queue_free()
+			return
 		if Input.is_action_just_pressed("rotate"):
 			rotation_degrees += 90
 		if Input.is_action_pressed("click"):
