@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddu00bxi35taq"]
+[gd_scene load_steps=4 format=3 uid="uid://ddu00bxi35taq"]
 
 [ext_resource type="Script" uid="uid://421uunl7sso0" path="res://scripts/end.gd" id="1_mwn6m"]
+[ext_resource type="Texture2D" uid="uid://cau7ln6mjtsms" path="res://assets/BatteryNegative.png" id="2_3d26k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
@@ -9,19 +10,10 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_mwn6m")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.129309, 0.32608, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_3d26k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)

@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyfl2f2t2auf3"]
+
+[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/board_space.tscn" id="1_lndbk"]
+[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/end.tscn" id="2_0qcrn"]
+[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/start.tscn" id="3_3iykq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="End" parent="." instance=ExtResource("2_0qcrn")]
+position = Vector2(704, 610)
+
+[node name="Start" parent="." instance=ExtResource("3_3iykq")]
+position = Vector2(576, 610)
+
+[node name="BoardSpaceList" type="Node2D" parent="."]
+
+[node name="BoardSpace" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(448, 610)
+
+[node name="BoardSpace2" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(320, 610)
+
+[node name="BoardSpace3" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(832, 610)
+
+[node name="BoardSpace4" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(960, 610)
+
+[node name="BoardSpace5" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(448, 482)
+
+[node name="BoardSpace9" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(576, 482)
+
+[node name="BoardSpace6" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(320, 482)
+
+[node name="BoardSpace7" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(832, 482)
+
+[node name="BoardSpace10" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(704, 482)
+
+[node name="BoardSpace8" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(960, 482)
+
+[node name="BoardSpace11" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(448, 98)
+
+[node name="BoardSpace12" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(576, 98)
+
+[node name="BoardSpace13" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(320, 98)
+
+[node name="BoardSpace14" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(832, 98)
+
+[node name="BoardSpace15" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(704, 98)
+
+[node name="BoardSpace16" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(960, 98)
+
+[node name="BoardSpace17" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(448, 226)
+
+[node name="BoardSpace18" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(576, 226)
+
+[node name="BoardSpace19" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(320, 226)
+
+[node name="BoardSpace20" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(832, 226)
+
+[node name="BoardSpace21" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(704, 226)
+
+[node name="BoardSpace22" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(960, 226)
+
+[node name="BoardSpace23" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(448, 354)
+
+[node name="BoardSpace24" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(576, 354)
+
+[node name="BoardSpace25" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(320, 354)
+
+[node name="BoardSpace26" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(832, 354)
+
+[node name="BoardSpace27" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(704, 354)
+
+[node name="BoardSpace28" parent="BoardSpaceList" instance=ExtResource("1_lndbk")]
+position = Vector2(960, 354)

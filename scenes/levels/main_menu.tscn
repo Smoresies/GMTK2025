@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpyyn6a8dbvfx"]
 
-[ext_resource type="Script" uid="uid://yvmigd815ih8" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://yvmigd815ih8" path="res://scripts/main_menu.gd" id="1_fsby3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,4 +36,4 @@ offset_bottom = 98.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-script = ExtResource("1_l6cm7")
+script = ExtResource("1_fsby3")
