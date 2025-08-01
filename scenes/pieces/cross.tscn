@@ -20,7 +20,7 @@ texture = ExtResource("2_2t7x4")
 
 [node name="Area2D2" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(64, 0)
@@ -29,7 +29,7 @@ shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D7" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D7"]
 position = Vector2(-64, 0)
@@ -38,7 +38,7 @@ shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D8" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D8"]
 position = Vector2(0, 64)
@@ -47,7 +47,7 @@ shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D9" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D9"]
 position = Vector2(0, -64)
@@ -56,7 +56,7 @@ shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="SendDown" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 64)
@@ -66,7 +66,7 @@ disabled = true
 
 [node name="Area2D6" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="SendRight" type="CollisionShape2D" parent="Area2D6"]
 position = Vector2(64, 0)
@@ -76,7 +76,7 @@ disabled = true
 
 [node name="Area2D5" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="SendUp" type="CollisionShape2D" parent="Area2D5"]
 position = Vector2(0, -64)
@@ -86,7 +86,7 @@ disabled = true
 
 [node name="Area2D4" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="SendLeft" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(-64, 0)

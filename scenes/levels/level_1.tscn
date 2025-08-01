@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt1a3o37tx5tc"]
+[gd_scene load_steps=7 format=3 uid="uid://bt1a3o37tx5tc"]
 
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/end.tscn" id="1_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/start.tscn" id="2_x42e6"]
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/board_space.tscn" id="3_6761a"]
 [ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="4_6761a"]
 [ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pieces/pipe.tscn" id="5_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="6_sk5k4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -42,3 +43,6 @@ position = Vector2(222, 319)
 
 [node name="Pipe2" parent="." instance=ExtResource("5_sk5k4")]
 position = Vector2(425, 233)
+
+[node name="TPiece" parent="." instance=ExtResource("6_sk5k4")]
+position = Vector2(838, 243)
