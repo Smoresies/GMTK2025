@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2y6uucg4fxdw"]
 
 [ext_resource type="Script" uid="uid://dpomp1irn0tlw" path="res://scenes/side_objective.gd" id="1_mtqag"]
-[ext_resource type="Texture2D" uid="uid://cau7ln6mjtsms" path="res://assets/BatteryNegative.png" id="2_sdfho"]
+[ext_resource type="Texture2D" uid="uid://dqncxeg2t7e55" path="res://assets/sidebulb-Sheet.png" id="2_mtqag"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
@@ -12,11 +12,11 @@ script = ExtResource("1_mtqag")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("2_sdfho")
+texture = ExtResource("2_mtqag")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 0)
+position = Vector2(0, 64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xdx16")
 
