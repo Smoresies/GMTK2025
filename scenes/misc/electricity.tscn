@@ -13,5 +13,5 @@ shader_parameter/basic_texture = ExtResource("2_asbw4")
 texture_filter = 1
 material = SubResource("ShaderMaterial_lwutn")
 points = PackedVector2Array(-74, 1, 98, 1)
-default_color = Color(1, 1, 0, 1)
+default_color = Color(1, 1, 0.43, 1)
 texture_mode = 2

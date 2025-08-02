@@ -1,66 +1,259 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt1a3o37tx5tc"]
+[gd_scene load_steps=20 format=3 uid="uid://cx5s0r32oxjn0"]
 
-[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/end.tscn" id="1_nsrm0"]
-[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/start.tscn" id="2_x42e6"]
-[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/board_space.tscn" id="3_6761a"]
+[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="1_nsrm0"]
+[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_wtwp4"]
+[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="2_x42e6"]
+[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="3_6761a"]
 [ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="4_6761a"]
-[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/piece_spawner.tscn" id="5_excbq"]
+[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_excbq"]
 [ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_iav0o"]
 [ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="6_sk5k4"]
 [ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_dnkej"]
 [ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_wtwp4"]
 [ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="11_iwr0g"]
+[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="13_iwr0g"]
+[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="14_bahl2"]
+[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="15_np2pn"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
+font = ExtResource("13_iwr0g")
+font_size = 32
 
-[node name="End" parent="." instance=ExtResource("1_nsrm0")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf2ju"]
+atlas = ExtResource("15_np2pn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk3ny"]
+atlas = ExtResource("15_np2pn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y12jq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_bahl2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf2ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk3ny")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 5.0
+}]
+
+[node name="BaseLevel" type="Node" node_paths=PackedStringArray("end")]
+script = ExtResource("1_wtwp4")
+end = NodePath("BaseBoard/End")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.27246e-06, 0.204613, 0.00162107, 1)
+
+[node name="BaseBoard" type="Node2D" parent="."]
+
+[node name="End" parent="BaseBoard" instance=ExtResource("1_nsrm0")]
 position = Vector2(704, 610)
 
-[node name="Start" parent="." instance=ExtResource("2_x42e6")]
+[node name="Start" parent="BaseBoard" instance=ExtResource("2_x42e6")]
 position = Vector2(576, 610)
 
-[node name="BoardSpaceList" type="Node2D" parent="."]
+[node name="BoardSpaceList" type="Node2D" parent="BaseBoard"]
 
-[node name="BoardSpace9" parent="BoardSpaceList" instance=ExtResource("3_6761a")]
+[node name="BoardSpace9" parent="BaseBoard/BoardSpaceList" instance=ExtResource("3_6761a")]
 position = Vector2(576, 482)
 
-[node name="BoardSpace10" parent="BoardSpaceList" instance=ExtResource("3_6761a")]
+[node name="BoardSpace10" parent="BaseBoard/BoardSpaceList" instance=ExtResource("3_6761a")]
 position = Vector2(704, 482)
 
-[node name="ImmobileTurn" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
-position = Vector2(832, 610)
-rotation = 1.5708
-
-[node name="ImmobileTurn2" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
 position = Vector2(448, 610)
-rotation = -3.14159
+rotation = 3.14159
 
-[node name="ImmobileTurn3" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
-position = Vector2(832, 482)
-
-[node name="ImmobileTurn4" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="ImmobileTurn2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
 position = Vector2(448, 482)
 rotation = -1.5708
 
-[node name="PipeSpawner" parent="." instance=ExtResource("5_excbq")]
+[node name="ImmobileTurn3" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
+position = Vector2(832, 482)
+
+[node name="ImmobileTurn4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
+position = Vector2(832, 610)
+rotation = 1.5708
+
+[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
 position = Vector2(35, 650)
 num_pieces = 2
 
-[node name="TurnSpawner" parent="." instance=ExtResource("5_excbq")]
+[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
+visible = false
 position = Vector2(35, 550)
 piece = ExtResource("6_iav0o")
-num_pieces = 0
+num_pieces = 4
 sprite = ExtResource("7_dnkej")
 
-[node name="TSpawner" parent="." instance=ExtResource("5_excbq")]
+[node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
+visible = false
 position = Vector2(35, 450)
 piece = ExtResource("6_sk5k4")
-num_pieces = 0
 sprite = ExtResource("9_mm8aj")
 
-[node name="CrossSpawner" parent="." instance=ExtResource("5_excbq")]
+[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
+visible = false
 position = Vector2(35, 350)
 piece = ExtResource("10_wtwp4")
-num_pieces = 0
 sprite = ExtResource("11_iwr0g")
+
+[node name="Level_Complete" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Level_Complete"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.313726, 0.313726, 0.619608)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Level_Complete"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -250.0
+offset_right = 150.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Level_Complete/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+color = Color(0.756863, 0.447059, 0.0784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Level_Complete/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.831373, 0.733333, 0.482353, 1)
+
+[node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 2
+offset_left = 76.0
+offset_top = 56.0
+offset_right = 212.0
+offset_bottom = 100.0
+text = "You Win!"
+label_settings = SubResource("LabelSettings_j18pg")
+
+[node name="Bulb1" type="AnimatedSprite2D" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 1
+position = Vector2(68, 176)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_y12jq")
+
+[node name="Bulb2" type="AnimatedSprite2D" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 1
+position = Vector2(140, 176)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_y12jq")
+frame_progress = 0.546608
+
+[node name="Bulb3" type="AnimatedSprite2D" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 1
+position = Vector2(212, 176)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_y12jq")
+frame_progress = 0.546608
+
+[node name="NextLevel" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -180.0
+offset_right = 45.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Next Level"
+
+[node name="LevelSelect" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -130.0
+offset_right = 48.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
+[node name="MainMenu" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1095.0
+offset_top = 644.0
+offset_right = 1223.0
+offset_bottom = 675.0
+text = "Check Solution!"
+
+[connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Button" to="BaseBoard/Start" method="_on_button_pressed"]

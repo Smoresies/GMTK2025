@@ -19,7 +19,7 @@ func _ready():
 func _trigger_end():
 	### Open Menu & Stop Game Interaction
 	level_complete.visible = true
-	global.can_interact = false
+	# global.can_interact = false
 	
 	### Stars Counting
 	# See how many bulbs gotten vs total bulbs. 

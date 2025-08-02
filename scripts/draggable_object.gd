@@ -21,7 +21,7 @@ func _process(_delta):
 			elif global.is_dragging:
 				draggable = false
 				return
-		elif Input.is_action_just_pressed("right_click"):
+		elif Input.is_action_just_pressed("right_click") and not global.is_dragging:
 			if last_body:
 				last_body.is_empty = true
 				# print("Fixed the body!")

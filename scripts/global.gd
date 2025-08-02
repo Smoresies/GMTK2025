@@ -11,3 +11,7 @@ var connections : int = 0
 var side_objectives : int = 0
 
 var number_of_side_objectives : int
+
+signal level_check()
+
+signal level_not_complete()

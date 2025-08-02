@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_8x3ej"]
 [ext_resource type="Texture2D" uid="uid://bbjnl0gvngfgx" path="res://assets/StraightPipe.png" id="2_arpqm"]
-[ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/electricity.tscn" id="3_1lj57"]
+[ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/misc/electricity.tscn" id="3_1lj57"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3ej"]
 
@@ -63,6 +63,7 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_arpqm")
 
 [node name="Electricity" parent="." instance=ExtResource("3_1lj57")]
+visible = false
 position = Vector2(-3, -1)
 points = PackedVector2Array(-61, 1, 67, 1)
 

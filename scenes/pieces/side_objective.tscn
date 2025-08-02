@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2y6uucg4fxdw"]
+[gd_scene load_steps=5 format=3 uid="uid://d2y6uucg4fxdw"]
 
 [ext_resource type="Script" uid="uid://dpomp1irn0tlw" path="res://scripts/side_objective.gd" id="1_mtqag"]
 [ext_resource type="Texture2D" uid="uid://dqncxeg2t7e55" path="res://assets/sidebulb-Sheet.png" id="2_mtqag"]
+[ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/misc/electricity.tscn" id="3_sdfho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
@@ -19,5 +20,10 @@ hframes = 2
 position = Vector2(0, 64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xdx16")
+
+[node name="Electricity" parent="." instance=ExtResource("3_sdfho")]
+visible = false
+position = Vector2(7, 28)
+points = PackedVector2Array(-7, 35, -7, -12)
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
