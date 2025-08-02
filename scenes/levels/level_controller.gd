@@ -14,5 +14,5 @@ func _ready():
 func _trigger_end():
 	level_complete.visible = true
 	global.can_interact = false
-	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_packed(nextLevel)
+	# await get_tree().create_timer(1).timeout
+	# get_tree().change_scene_to_packed(nextLevel)
