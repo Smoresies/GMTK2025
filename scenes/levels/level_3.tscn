@@ -1,39 +1,39 @@
-[gd_scene load_steps=21 format=3 uid="uid://cx5s0r32oxjn0"]
+[gd_scene load_steps=21 format=3 uid="uid://bbceudb224mlv"]
 
-[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="1_nsrm0"]
-[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_wtwp4"]
-[ext_resource type="PackedScene" uid="uid://g52i8kfitpsm" path="res://scenes/levels/level_2.tscn" id="2_iwr0g"]
-[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="2_x42e6"]
-[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="3_6761a"]
-[ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="4_6761a"]
-[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_excbq"]
-[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_iav0o"]
-[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="6_sk5k4"]
-[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_dnkej"]
-[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_mm8aj"]
-[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_wtwp4"]
-[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="11_iwr0g"]
-[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="13_iwr0g"]
-[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="14_bahl2"]
-[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="15_np2pn"]
+[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_t4txi"]
+[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_apo5x"]
+[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="3_josfm"]
+[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_lgrx1"]
+[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_fhpes"]
+[ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="5_josfm"]
+[ext_resource type="PackedScene" uid="uid://drov7tf4sps1t" path="res://scenes/pieces/immobile_t_piece.tscn" id="6_lgrx1"]
+[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_vmg1d"]
+[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_1nwmf"]
+[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="8_5f5xw"]
+[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_o3ttr"]
+[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="11_kva3v"]
+[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="12_jql0x"]
+[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="13_do6pa"]
+[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="14_n8qcm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
-font = ExtResource("13_iwr0g")
+font = ExtResource("12_jql0x")
 font_size = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf2ju"]
-atlas = ExtResource("15_np2pn")
+atlas = ExtResource("14_n8qcm")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hk3ny"]
-atlas = ExtResource("15_np2pn")
+atlas = ExtResource("14_n8qcm")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y12jq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_bahl2")
+"texture": ExtResource("13_do6pa")
 }],
 "loop": true,
 "name": &"default",
@@ -52,9 +52,8 @@ animations = [{
 }]
 
 [node name="BaseLevel" type="Node" node_paths=PackedStringArray("end")]
-script = ExtResource("1_wtwp4")
+script = ExtResource("1_t4txi")
 end = NodePath("BaseBoard/End")
-nextLevel = ExtResource("2_iwr0g")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -67,57 +66,59 @@ color = Color(1.27246e-06, 0.204613, 0.00162107, 1)
 
 [node name="BaseBoard" type="Node2D" parent="."]
 
-[node name="End" parent="BaseBoard" instance=ExtResource("1_nsrm0")]
+[node name="End" parent="BaseBoard" instance=ExtResource("2_apo5x")]
 position = Vector2(704, 610)
 
-[node name="Start" parent="BaseBoard" instance=ExtResource("2_x42e6")]
+[node name="Start" parent="BaseBoard" instance=ExtResource("3_josfm")]
 position = Vector2(576, 610)
 
 [node name="BoardSpaceList" type="Node2D" parent="BaseBoard"]
 
-[node name="BoardSpace9" parent="BaseBoard/BoardSpaceList" instance=ExtResource("3_6761a")]
+[node name="BoardSpace5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
+position = Vector2(448, 482)
+
+[node name="BoardSpace9" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(576, 482)
 
-[node name="BoardSpace10" parent="BaseBoard/BoardSpaceList" instance=ExtResource("3_6761a")]
+[node name="BoardSpace10" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(704, 482)
 
-[node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
+[node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
+position = Vector2(832, 354)
+
+[node name="BoardSpace27" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
+position = Vector2(704, 354)
+
+[node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_josfm")]
 position = Vector2(448, 610)
 rotation = 3.14159
 
-[node name="ImmobileTurn2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
-position = Vector2(448, 482)
-rotation = -1.5708
-
-[node name="ImmobileTurn3" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
-position = Vector2(832, 482)
-
-[node name="ImmobileTurn4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_6761a")]
-position = Vector2(832, 610)
+[node name="ImmobileTurn2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_josfm")]
+position = Vector2(832, 608)
 rotation = 1.5708
 
-[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
+[node name="ImmobileTPiece" parent="BaseBoard/BoardSpaceList" instance=ExtResource("6_lgrx1")]
+position = Vector2(832, 482)
+
+[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 650)
-num_pieces = 2
 
-[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
-visible = false
+[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 550)
-piece = ExtResource("6_iav0o")
+piece = ExtResource("6_vmg1d")
 num_pieces = 4
-sprite = ExtResource("7_dnkej")
+sprite = ExtResource("7_1nwmf")
 
-[node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
-visible = false
+[node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 450)
-piece = ExtResource("6_sk5k4")
-sprite = ExtResource("9_mm8aj")
+piece = ExtResource("8_5f5xw")
+sprite = ExtResource("9_o3ttr")
 
-[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_excbq")]
+[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 visible = false
 position = Vector2(35, 350)
-piece = ExtResource("10_wtwp4")
-sprite = ExtResource("11_iwr0g")
+piece = ExtResource("10_kdsi4")
+sprite = ExtResource("11_kva3v")
 
 [node name="Level_Complete" type="Control" parent="."]
 visible = false

@@ -314,4 +314,5 @@ offset_bottom = 675.0
 text = "Check Solution!"
 
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Button" to="BaseBoard/Start" method="_on_button_pressed"]
