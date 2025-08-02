@@ -1,40 +1,38 @@
-[gd_scene load_steps=22 format=3 uid="uid://g52i8kfitpsm"]
+[gd_scene load_steps=20 format=3 uid="uid://c6gkupcg78wyd"]
 
-[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_r88tb"]
-[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_1yj8c"]
-[ext_resource type="PackedScene" uid="uid://bbceudb224mlv" path="res://scenes/levels/level_3.tscn" id="2_v8d84"]
-[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="3_ndlae"]
-[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_v8d84"]
-[ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="5_1yj8c"]
-[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_gw1l3"]
-[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_p4se4"]
-[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_sibr7"]
-[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="8_lkn2k"]
-[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_sbygb"]
-[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_5niy6"]
-[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="11_wikm6"]
-[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="12_1c1qw"]
-[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="13_1a10c"]
-[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="14_mx6s3"]
-[ext_resource type="PackedScene" uid="uid://dfvh3ls3am0xr" path="res://scenes/pieces/immobile_pipe.tscn" id="16_ndlae"]
+[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_fcb7b"]
+[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_ov8fk"]
+[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="3_pmra4"]
+[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_1bx01"]
+[ext_resource type="PackedScene" uid="uid://drov7tf4sps1t" path="res://scenes/pieces/immobile_t_piece.tscn" id="5_ov8fk"]
+[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_vq5n0"]
+[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_xt2o7"]
+[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_beuva"]
+[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="8_05se8"]
+[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_12cdj"]
+[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_r3huh"]
+[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="11_lc5pf"]
+[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="12_0n65g"]
+[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="13_uyomx"]
+[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="14_io455"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
-font = ExtResource("12_1c1qw")
+font = ExtResource("12_0n65g")
 font_size = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf2ju"]
-atlas = ExtResource("14_mx6s3")
+atlas = ExtResource("14_io455")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hk3ny"]
-atlas = ExtResource("14_mx6s3")
+atlas = ExtResource("14_io455")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y12jq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_1a10c")
+"texture": ExtResource("13_uyomx")
 }],
 "loop": true,
 "name": &"default",
@@ -53,9 +51,8 @@ animations = [{
 }]
 
 [node name="BaseLevel" type="Node" node_paths=PackedStringArray("end")]
-script = ExtResource("1_r88tb")
+script = ExtResource("1_fcb7b")
 end = NodePath("BaseBoard/End")
-nextLevel = ExtResource("2_v8d84")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -68,56 +65,70 @@ color = Color(1.27246e-06, 0.204613, 0.00162107, 1)
 
 [node name="BaseBoard" type="Node2D" parent="."]
 
-[node name="End" parent="BaseBoard" instance=ExtResource("2_1yj8c")]
+[node name="End" parent="BaseBoard" instance=ExtResource("2_ov8fk")]
 position = Vector2(704, 610)
 
-[node name="Start" parent="BaseBoard" instance=ExtResource("3_ndlae")]
+[node name="Start" parent="BaseBoard" instance=ExtResource("3_pmra4")]
 position = Vector2(576, 610)
 
 [node name="BoardSpaceList" type="Node2D" parent="BaseBoard"]
 
-[node name="BoardSpace12" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_v8d84")]
+[node name="BoardSpace2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(320, 610)
+
+[node name="BoardSpace4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(960, 610)
+
+[node name="BoardSpace5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
 position = Vector2(448, 482)
 
-[node name="BoardSpace11" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_v8d84")]
+[node name="BoardSpace6" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(320, 482)
+
+[node name="BoardSpace7" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
 position = Vector2(832, 482)
 
-[node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_1yj8c")]
-position = Vector2(448, 610)
-rotation = 3.14159
+[node name="BoardSpace8" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(960, 482)
 
-[node name="ImmobileTurn4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_1yj8c")]
+[node name="BoardSpace23" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(448, 354)
+
+[node name="BoardSpace24" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(576, 354)
+
+[node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(832, 354)
+
+[node name="BoardSpace27" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_1bx01")]
+position = Vector2(704, 354)
+
+[node name="ImmobileTPiece" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_ov8fk")]
 position = Vector2(832, 610)
 rotation = 1.5708
 
-[node name="ImmobilePipe" parent="BaseBoard/BoardSpaceList" instance=ExtResource("16_ndlae")]
-position = Vector2(576, 482)
+[node name="ImmobileTPiece2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_ov8fk")]
+position = Vector2(448, 610)
+rotation = 1.5708
 
-[node name="ImmobilePipe2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("16_ndlae")]
-position = Vector2(704, 482)
-
-[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_gw1l3")]
-visible = false
+[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_vq5n0")]
 position = Vector2(35, 650)
-num_pieces = 2
 
-[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_gw1l3")]
+[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_vq5n0")]
 position = Vector2(35, 550)
-piece = ExtResource("6_p4se4")
-num_pieces = 2
-sprite = ExtResource("7_sibr7")
+piece = ExtResource("6_xt2o7")
+num_pieces = 4
+sprite = ExtResource("7_beuva")
 
-[node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_gw1l3")]
-visible = false
+[node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_vq5n0")]
 position = Vector2(35, 450)
-piece = ExtResource("8_lkn2k")
-sprite = ExtResource("9_sbygb")
+piece = ExtResource("8_05se8")
+sprite = ExtResource("9_12cdj")
 
-[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_gw1l3")]
-visible = false
+[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_vq5n0")]
 position = Vector2(35, 350)
-piece = ExtResource("10_5niy6")
-sprite = ExtResource("11_wikm6")
+piece = ExtResource("10_r3huh")
+sprite = ExtResource("11_lc5pf")
 
 [node name="Level_Complete" type="Control" parent="."]
 visible = false

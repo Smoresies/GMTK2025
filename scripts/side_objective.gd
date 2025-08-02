@@ -5,6 +5,7 @@ extends Area2D
 
 func _ready() -> void:
 	global.level_not_complete.connect(_reset)
+	global.number_of_side_objectives += 1
 
 func _reset():
 	electricity.visible = false

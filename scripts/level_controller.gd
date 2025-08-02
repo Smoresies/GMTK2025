@@ -1,6 +1,6 @@
 extends Node
 
-@export var number_of_side_objectives : int = 0
+# @export var number_of_side_objectives : int = 0
 @export var end : Ender
 @export var nextLevel: PackedScene
 
@@ -12,7 +12,7 @@ extends Node
 
 
 func _ready():
-	global.number_of_side_objectives = number_of_side_objectives
+	# global.number_of_side_objectives = number_of_side_objectives
 	end.level_complete.connect(_trigger_end)
 	global.can_interact = true
 
@@ -24,7 +24,7 @@ func _trigger_end():
 	### Stars Counting
 	# See how many bulbs gotten vs total bulbs. 
 	# Subtract from 3, for number of bulbs at level end screen given
-	var bulbs = 3 - (global.number_of_side_objectives - global.side_objectives)
+	var bulbs = max(0, 3 - (global.number_of_side_objectives - global.side_objectives))
 	for i in range(0, bulbs):
 		match i:
 			0:

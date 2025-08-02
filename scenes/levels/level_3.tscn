@@ -94,7 +94,7 @@ position = Vector2(448, 610)
 rotation = 3.14159
 
 [node name="ImmobileTurn2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_josfm")]
-position = Vector2(832, 608)
+position = Vector2(832, 610)
 rotation = 1.5708
 
 [node name="ImmobileTPiece" parent="BaseBoard/BoardSpaceList" instance=ExtResource("6_lgrx1")]
@@ -102,16 +102,17 @@ position = Vector2(832, 482)
 
 [node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 650)
+num_pieces = 2
 
 [node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 550)
 piece = ExtResource("6_vmg1d")
-num_pieces = 4
 sprite = ExtResource("7_1nwmf")
 
 [node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 450)
 piece = ExtResource("8_5f5xw")
+num_pieces = 1
 sprite = ExtResource("9_o3ttr")
 
 [node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
