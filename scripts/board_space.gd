@@ -5,7 +5,8 @@ extends StaticBody2D
 var is_empty = true
 
 func _ready():
-	modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+	pass
+	# modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 
 func _process(_delta):
 	if global.is_dragging:

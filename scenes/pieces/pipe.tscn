@@ -15,7 +15,6 @@ colliders = [NodePath("Area2D/SendRight"), NodePath("Area2D4/SendLeft")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3.75, 3.75)
 texture = ExtResource("2_arpqm")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -41,7 +40,7 @@ disabled = true
 [node name="Area2D3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-scale = Vector2(6, 6)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_8x3ej")
 
 [node name="Area2D2" type="Area2D" parent="."]

@@ -137,6 +137,7 @@ piece = ExtResource("9_n737r")
 sprite = ExtResource("10_lg6wu")
 
 [node name="Level_Complete" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

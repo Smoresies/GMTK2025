@@ -33,7 +33,7 @@ position = Vector2(832, 610)
 rotation = 1.5708
 
 [node name="ImmobileTurn2" parent="BoardSpaceList" instance=ExtResource("4_6761a")]
-position = Vector2(448, 612)
+position = Vector2(448, 610)
 rotation = -3.14159
 
 [node name="ImmobileTurn3" parent="BoardSpaceList" instance=ExtResource("4_6761a")]

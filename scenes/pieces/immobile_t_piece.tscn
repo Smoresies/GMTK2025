@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://drov7tf4sps1t"]
+[gd_scene load_steps=6 format=3 uid="uid://drov7tf4sps1t"]
 
 [ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_alwf7"]
-[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="2_hs860"]
+[ext_resource type="Texture2D" uid="uid://dcl8raum3f1lc" path="res://assets/Circuit.png" id="2_hykxt"]
+[ext_resource type="Texture2D" uid="uid://b3qcuxx2fgvsw" path="res://assets/ImmobileT.png" id="3_hs860"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_832ky"]
 
@@ -11,10 +12,13 @@
 script = ExtResource("1_alwf7")
 colliders = [NodePath("Area2D/SendRight"), NodePath("Area2D5/SendUp"), NodePath("Area2D4/SendLeft")]
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_hykxt")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3.75, 3.75)
-texture = ExtResource("2_hs860")
+texture = ExtResource("3_hs860")
 
 [node name="Area2D2" type="Area2D" parent="."]
 collision_layer = 0

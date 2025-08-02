@@ -41,7 +41,7 @@ func _process(_delta):
 					last_body.is_empty = true
 				last_body = body_ref
 				body_ref.is_empty = false
-				body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+				#body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 				body_ref = null
 			elif last_body: # Prevent weird offset bug
 				var tween = get_tree().create_tween()
@@ -67,9 +67,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if not body.is_empty:
 			return
 		is_inside_droppable = true
-		body.modulate = Color(Color.REBECCA_PURPLE, 1)
-		if body_ref != null:
-			body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+		#body.modulate = Color(Color.REBECCA_PURPLE, 1)
+		#if body_ref != null:
+			#body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 		body_ref = body
 
 
