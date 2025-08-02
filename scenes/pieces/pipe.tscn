@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://j6rlujksnrsv"]
+[gd_scene load_steps=7 format=3 uid="uid://j6rlujksnrsv"]
 
 [ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_8x3ej"]
 [ext_resource type="Texture2D" uid="uid://bbjnl0gvngfgx" path="res://assets/StraightPipe.png" id="2_arpqm"]
+[ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/electricity.tscn" id="3_1lj57"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3ej"]
 
@@ -60,6 +61,10 @@ collision_mask = 2
 position = Vector2(64, 0)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_arpqm")
+
+[node name="Electricity" parent="." instance=ExtResource("3_1lj57")]
+position = Vector2(-3, -1)
+points = PackedVector2Array(-61, 1, 67, 1)
 
 [connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
 [connection signal="mouse_entered" from="Area2D3" to="." method="_on_area_2d_mouse_entered"]

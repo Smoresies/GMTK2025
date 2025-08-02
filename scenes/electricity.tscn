@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm2qt1birjd3m"]
+
+[ext_resource type="Shader" uid="uid://crex8emn1cwj5" path="res://assets/shader/lightning.tres" id="1_hfuqc"]
+[ext_resource type="Texture2D" uid="uid://nlp13vhuup56" path="res://assets/shader/lightning.png" id="2_asbw4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwutn"]
+shader = ExtResource("1_hfuqc")
+shader_parameter/Vanishing_Value = 0.0
+shader_parameter/speed = Vector2(-2, 0)
+shader_parameter/basic_texture = ExtResource("2_asbw4")
+
+[node name="Electricity" type="Line2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_lwutn")
+points = PackedVector2Array(-74, 1, 98, 1)
+default_color = Color(1, 1, 0, 1)
+texture_mode = 2
