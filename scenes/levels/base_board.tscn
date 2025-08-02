@@ -176,7 +176,6 @@ piece = ExtResource("9_n737r")
 sprite = ExtResource("10_lg6wu")
 
 [node name="Level_Complete" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -275,8 +274,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Next Level"
 
-[node name="LevelSelect" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
-visible = false
+[node name="Retry" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -289,7 +287,7 @@ offset_right = 48.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Main Menu"
+text = "Retry"
 
 [node name="MainMenu" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
@@ -314,5 +312,6 @@ offset_bottom = 675.0
 text = "Check Solution!"
 
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Button" to="BaseBoard/Start" method="_on_button_pressed"]

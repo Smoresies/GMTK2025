@@ -17,6 +17,9 @@ func _ready():
 	global.can_interact = true
 
 func _trigger_end():
+	### Brief pause for effect
+	await get_tree().create_timer(1).timeout
+	
 	### Open Menu & Stop Game Interaction
 	level_complete.visible = true
 	# global.can_interact = false
@@ -44,3 +47,7 @@ func _on_next_level_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
+
+
+func _on_retry_pressed() -> void:
+	get_tree().reload_current_scene()

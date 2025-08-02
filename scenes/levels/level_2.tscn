@@ -219,8 +219,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Next Level"
 
-[node name="LevelSelect" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
-visible = false
+[node name="Retry" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -233,7 +232,7 @@ offset_right = 48.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Main Menu"
+text = "Retry"
 
 [node name="MainMenu" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1

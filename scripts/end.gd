@@ -10,8 +10,8 @@ func _ready():
 
 func _on_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	global.connections += 1
-	print(global.connections, " ", global.expected_connections)
 	await get_tree().create_timer(.25).timeout 
+	print(global.connections, " ", global.expected_connections)
 	if global.connections == global.expected_connections:
 		_complete = true
 		level_complete.emit()
