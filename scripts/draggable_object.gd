@@ -12,7 +12,7 @@ var last_body : BoardSpace = null
 signal deleting_self()
 
 func _process(_delta):
-	if draggable:
+	if draggable and global.can_interact:
 		if Input.is_action_just_pressed("click"):
 			if not global.is_dragging:
 				initialPos = global_position

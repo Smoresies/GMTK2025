@@ -15,7 +15,7 @@ func _ready():
 	label.text = str(num_pieces)
 
 func _process(_delta: float) -> void:
-	if hovering:
+	if hovering and global.can_interact:
 		if Input.is_action_just_pressed("click") and num_pieces > 0:
 			num_pieces -= 1
 			label.text = str(num_pieces)
@@ -34,7 +34,7 @@ func _piece_deleted():
 func _on_area_2d_mouse_entered() -> void:
 	if not global.is_dragging:
 		hovering = true
-		scale *= Vector2(1.05, 1.05)
+		scale *= Vector2(1.25, 1.25)
 
 
 func _on_area_2d_mouse_exited() -> void:
