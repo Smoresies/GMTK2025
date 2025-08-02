@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bbj3hk8ikg7kg"]
+[gd_scene load_steps=24 format=3 uid="uid://bbj3hk8ikg7kg"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_j14br"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_0y7y4"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_h717f"]
 [ext_resource type="PackedScene" uid="uid://drov7tf4sps1t" path="res://scenes/pieces/immobile_t_piece.tscn" id="5_0y7y4"]
 [ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_l8eod"]
+[ext_resource type="Texture2D" uid="uid://svsgny3vj31m" path="res://assets/boards/CircuitCorner.png" id="5_sfnul"]
+[ext_resource type="Texture2D" uid="uid://iixbcfy6itxx" path="res://assets/boards/CircuitEdge.png" id="6_fea5r"]
 [ext_resource type="PackedScene" uid="uid://d2y6uucg4fxdw" path="res://scenes/pieces/side_objective.tscn" id="6_gruok"]
 [ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_sfnul"]
 [ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_fea5r"]
+[ext_resource type="Texture2D" uid="uid://cij6bflbxu7rj" path="res://assets/boards/CircuitPipe.png" id="7_sfnul"]
 [ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="8_vm1kt"]
 [ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_wnnhf"]
 [ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_ahsud"]
@@ -51,7 +54,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BaseLevel" type="Node" node_paths=PackedStringArray("end")]
+[node name="Level5" type="Node" node_paths=PackedStringArray("end")]
 script = ExtResource("1_j14br")
 end = NodePath("BaseBoard/End")
 
@@ -76,39 +79,56 @@ position = Vector2(576, 610)
 
 [node name="BoardSpace2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(320, 610)
+texture = ExtResource("5_sfnul")
 
 [node name="BoardSpace4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(960, 610)
+rotation = -1.5708
+texture = ExtResource("5_sfnul")
 
 [node name="BoardSpace5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(448, 482)
 
 [node name="BoardSpace6" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(320, 482)
+rotation = 1.5708
+texture = ExtResource("6_fea5r")
 
 [node name="BoardSpace7" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(832, 482)
 
 [node name="BoardSpace8" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(960, 482)
+rotation = -1.5708
+texture = ExtResource("6_fea5r")
 
 [node name="BoardSpace23" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(448, 354)
+rotation = 3.14159
+texture = ExtResource("6_fea5r")
 
 [node name="BoardSpace25" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(320, 354)
+rotation = 1.5708
+texture = ExtResource("5_sfnul")
 
 [node name="BoardSpace24" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(576, 354)
+texture = ExtResource("6_fea5r")
 
 [node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(832, 354)
+rotation = 3.14159
+texture = ExtResource("6_fea5r")
 
 [node name="BoardSpace28" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(960, 354)
+rotation = 3.14159
+texture = ExtResource("5_sfnul")
 
 [node name="BoardSpace27" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_h717f")]
 position = Vector2(704, 354)
+texture = ExtResource("7_sfnul")
 
 [node name="ImmobileTPiece" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_0y7y4")]
 position = Vector2(832, 610)

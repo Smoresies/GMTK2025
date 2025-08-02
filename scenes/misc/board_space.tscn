@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4ru1ecd16jse"]
 
 [ext_resource type="Script" uid="uid://bslvmncicqjrf" path="res://scripts/board_space.gd" id="1_qlrc0"]
-[ext_resource type="Texture2D" uid="uid://dcl8raum3f1lc" path="res://assets/Circuit.png" id="2_b3f3s"]
+[ext_resource type="Texture2D" uid="uid://dcl8raum3f1lc" path="res://assets/boards/Circuit.png" id="2_b3f3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlrc0"]
 size = Vector2(12, 12)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbceudb224mlv"]
+[gd_scene load_steps=25 format=3 uid="uid://bbceudb224mlv"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_t4txi"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_apo5x"]
@@ -7,10 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="5_fhpes"]
 [ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="5_josfm"]
+[ext_resource type="Texture2D" uid="uid://svsgny3vj31m" path="res://assets/boards/CircuitCorner.png" id="6_fhpes"]
 [ext_resource type="PackedScene" uid="uid://drov7tf4sps1t" path="res://scenes/pieces/immobile_t_piece.tscn" id="6_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="6_vmg1d"]
 [ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="7_1nwmf"]
+[ext_resource type="Texture2D" uid="uid://cij6bflbxu7rj" path="res://assets/boards/CircuitPipe.png" id="7_5f5xw"]
 [ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="8_5f5xw"]
+[ext_resource type="Texture2D" uid="uid://iixbcfy6itxx" path="res://assets/boards/CircuitEdge.png" id="8_o3ttr"]
 [ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="9_o3ttr"]
 [ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="10_kdsi4"]
 [ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="11_kva3v"]
@@ -52,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BaseLevel" type="Node" node_paths=PackedStringArray("end")]
+[node name="Level3" type="Node" node_paths=PackedStringArray("end")]
 script = ExtResource("1_t4txi")
 end = NodePath("BaseBoard/End")
 nextLevel = ExtResource("2_lgrx1")
@@ -78,18 +81,26 @@ position = Vector2(576, 610)
 
 [node name="BoardSpace5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(448, 482)
+rotation = 1.5708
+texture = ExtResource("6_fhpes")
 
 [node name="BoardSpace9" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(576, 482)
+texture = ExtResource("7_5f5xw")
 
 [node name="BoardSpace10" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(704, 482)
+texture = ExtResource("8_o3ttr")
 
 [node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(832, 354)
+rotation = 3.14159
+texture = ExtResource("6_fhpes")
 
 [node name="BoardSpace27" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lgrx1")]
 position = Vector2(704, 354)
+rotation = 1.5708
+texture = ExtResource("6_fhpes")
 
 [node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("5_josfm")]
 position = Vector2(448, 610)
