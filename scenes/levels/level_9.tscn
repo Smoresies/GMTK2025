@@ -126,7 +126,6 @@ texture = ExtResource("6_av4qj")
 [node name="BoardSpace24" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lbaq2")]
 position = Vector2(576, 354)
 rotation = 3.14159
-texture = ExtResource("5_hnqu7")
 
 [node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_lbaq2")]
 position = Vector2(832, 354)
@@ -154,6 +153,9 @@ position = Vector2(960, 226)
 [node name="Ground6" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_gq3w2")]
 position = Vector2(1088, 354)
 rotation = 1.5708
+
+[node name="Ground7" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_gq3w2")]
+position = Vector2(576, 226)
 
 [node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_qydmw")]
 position = Vector2(448, 609)
