@@ -8,6 +8,7 @@ var offset: Vector2
 var initialPos: Vector2
 var last_body : BoardSpace = null
 @onready var initialSize: Vector2 = scale
+@export var sfx_settled: AudioStreamPlayer
 
 signal deleting_self()
 
@@ -37,6 +38,7 @@ func _process(_delta):
 			if is_inside_droppable and body_ref:
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+				sfx_settled.play()
 				if last_body:
 					last_body.is_empty = true
 				last_body = body_ref

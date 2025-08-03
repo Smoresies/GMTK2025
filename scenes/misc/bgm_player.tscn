@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://4k4pr43p0e6k"]
+
+[ext_resource type="AudioStream" uid="uid://ujkh5wsh27ye" path="res://assets/music/SubBeat3.ogg" id="1_ebtwv"]
+[ext_resource type="AudioStream" uid="uid://bm7p5225e330q" path="res://assets/music/SubBeat2.ogg" id="2_uem65"]
+[ext_resource type="AudioStream" uid="uid://cdjxp4jcxa2q6" path="res://assets/music/SubBeat1.ogg" id="3_whc87"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mqh5v"]
+streams_count = 3
+stream_0/stream = ExtResource("1_ebtwv")
+stream_1/stream = ExtResource("2_uem65")
+stream_2/stream = ExtResource("3_whc87")
+
+[node name="bgm_player" type="AudioStreamPlayer2D"]
+stream = SubResource("AudioStreamRandomizer_mqh5v")
+autoplay = true

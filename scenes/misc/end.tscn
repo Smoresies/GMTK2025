@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddu00bxi35taq"]
+[gd_scene load_steps=6 format=3 uid="uid://ddu00bxi35taq"]
 
 [ext_resource type="Script" uid="uid://421uunl7sso0" path="res://scripts/end.gd" id="1_mwn6m"]
 [ext_resource type="Texture2D" uid="uid://cau7ln6mjtsms" path="res://assets/BatteryNegative.png" id="2_3d26k"]
+[ext_resource type="AudioStream" uid="uid://cc0xao100lspq" path="res://assets/sfx/positive.wav" id="3_qoeks"]
+[ext_resource type="AudioStream" uid="uid://dl0n4wcaimrlo" path="res://assets/sfx/negative.wav" id="4_g2qay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
@@ -18,5 +20,11 @@ texture = ExtResource("2_3d26k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_xdx16")
+
+[node name="sfx_complete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qoeks")
+
+[node name="sfx_fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_g2qay")
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

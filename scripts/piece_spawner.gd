@@ -4,9 +4,11 @@ extends Node2D
 @export var piece : PackedScene
 @export var num_pieces : int = 3
 @export var sprite : CompressedTexture2D
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var initialSize: Vector2 = scale
 @onready var label: Label = $Label
+@onready var sfx_spawn_piece: AudioStreamPlayer = $sfx_spawn_piece
 
 var hovering: bool = false
 
@@ -17,6 +19,7 @@ func _ready():
 func _process(_delta: float) -> void:
 	if hovering and global.can_interact:
 		if Input.is_action_just_pressed("click") and num_pieces > 0:
+			sfx_spawn_piece.play()
 			num_pieces -= 1
 			label.text = str(num_pieces)
 			var new_piece = piece.instantiate()

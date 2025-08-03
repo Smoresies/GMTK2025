@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cx5s0r32oxjn0"]
+[gd_scene load_steps=24 format=3 uid="uid://cx5s0r32oxjn0"]
 
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="1_nsrm0"]
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_wtwp4"]
@@ -17,6 +17,8 @@
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="13_iwr0g"]
 [ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="14_bahl2"]
 [ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="15_np2pn"]
+[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="18_np2pn"]
+[ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="18_v6ha0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
 font = ExtResource("13_iwr0g")
@@ -122,6 +124,13 @@ position = Vector2(35, 350)
 piece = ExtResource("10_wtwp4")
 sprite = ExtResource("11_iwr0g")
 
+[node name="Button" type="Button" parent="BaseBoard"]
+offset_left = 1095.0
+offset_top = 644.0
+offset_right = 1223.0
+offset_bottom = 675.0
+text = "Check Solution!"
+
 [node name="Level_Complete" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -214,10 +223,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -180.0
-offset_right = 45.0
-offset_bottom = -149.0
+offset_left = -48.0
+offset_top = -182.0
+offset_right = 48.0
+offset_bottom = -151.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Next Level"
@@ -252,14 +261,13 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Main Menu"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1095.0
-offset_top = 644.0
-offset_right = 1223.0
-offset_bottom = 675.0
-text = "Check Solution!"
+[node name="bgm_player" parent="." instance=ExtResource("18_v6ha0")]
 
+[node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_np2pn")
+volume_db = -10.0
+
+[connection signal="pressed" from="BaseBoard/Button" to="BaseBoard/Start" method="_on_button_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Button" to="BaseBoard/Start" method="_on_button_pressed"]

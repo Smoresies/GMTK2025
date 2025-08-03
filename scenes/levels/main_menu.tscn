@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpyyn6a8dbvfx"]
+[gd_scene load_steps=13 format=3 uid="uid://bpyyn6a8dbvfx"]
 
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="1_721jg"]
 [ext_resource type="Script" uid="uid://b445y0nu822h" path="res://scripts/main_menu.gd" id="1_geflf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="3_fkd6t"]
 [ext_resource type="Texture2D" uid="uid://jp0baknavkfs" path="res://assets/loop.png" id="6_crctu"]
 [ext_resource type="Texture2D" uid="uid://dunilqjnfog5l" path="res://assets/gmtk-game-jam-2025-logo-black.png" id="7_sn5u3"]
+[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="8_sn5u3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_keln3"]
 font = ExtResource("1_721jg")
@@ -204,5 +205,9 @@ texture = ExtResource("6_crctu")
 position = Vector2(643, 387)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_sn5u3")
+
+[node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_sn5u3")
+volume_db = -10.0
 
 [connection signal="pressed" from="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect/StartGame" to="." method="_on_start_game_pressed"]

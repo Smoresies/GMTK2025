@@ -9,6 +9,7 @@ extends Node
 @onready var bulb_1: AnimatedSprite2D = $Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Bulb1
 @onready var bulb_2: AnimatedSprite2D = $Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Bulb2
 @onready var bulb_3: AnimatedSprite2D = $Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Bulb3
+@onready var sfx_button_press: AudioStreamPlayer = $sfx_button_press
 
 
 func _ready():
@@ -47,14 +48,20 @@ func _trigger_end():
 
 func _on_next_level_pressed() -> void:
 	global.number_of_side_objectives = 0
+	sfx_button_press.play()
+	await sfx_button_press.finished
 	get_tree().change_scene_to_packed(nextLevel)
 
 
 func _on_main_menu_pressed() -> void:
 	global.number_of_side_objectives = 0
+	sfx_button_press.play()
+	await sfx_button_press.finished
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
 
 
 func _on_retry_pressed() -> void:
 	global.number_of_side_objectives = 0
+	sfx_button_press.play()
+	await sfx_button_press.finished
 	get_tree().reload_current_scene()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dyfl2f2t2auf3"]
+[gd_scene load_steps=21 format=3 uid="uid://dyfl2f2t2auf3"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_j18pg"]
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="1_lndbk"]
@@ -14,6 +14,8 @@
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="11_os2q3"]
 [ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="14_n737r"]
 [ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="15_lg6wu"]
+[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="15_n737r"]
+[ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="16_lg6wu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
 font = ExtResource("11_os2q3")
@@ -175,6 +177,13 @@ position = Vector2(35, 350)
 piece = ExtResource("9_n737r")
 sprite = ExtResource("10_lg6wu")
 
+[node name="Button" type="Button" parent="BaseBoard"]
+offset_left = 1095.0
+offset_top = 644.0
+offset_right = 1223.0
+offset_bottom = 675.0
+text = "Check Solution!"
+
 [node name="Level_Complete" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -266,10 +275,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -180.0
-offset_right = 45.0
-offset_bottom = -149.0
+offset_left = -48.0
+offset_top = -182.0
+offset_right = 48.0
+offset_bottom = -151.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Next Level"
@@ -304,14 +313,13 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Main Menu"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1095.0
-offset_top = 644.0
-offset_right = 1223.0
-offset_bottom = 675.0
-text = "Check Solution!"
+[node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_n737r")
+volume_db = -10.0
 
+[node name="bgm_player" parent="." instance=ExtResource("16_lg6wu")]
+
+[connection signal="pressed" from="BaseBoard/Button" to="BaseBoard/Start" method="_on_button_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Button" to="BaseBoard/Start" method="_on_button_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0e6p2sm7c4va"]
+[gd_scene load_steps=8 format=3 uid="uid://b0e6p2sm7c4va"]
 
 [ext_resource type="Script" uid="uid://c85utvmtdanpx" path="res://scripts/piece_spawner.gd" id="1_nvhmr"]
 [ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pieces/pipe.tscn" id="2_q5hwa"]
 [ext_resource type="Texture2D" uid="uid://bbjnl0gvngfgx" path="res://assets/StraightPipe.png" id="3_5cmve"]
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="4_5cmve"]
+[ext_resource type="AudioStream" uid="uid://b54csh757er18" path="res://assets/sfx/misc_menu.wav" id="5_v6ibm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2enb5"]
 
@@ -32,6 +33,10 @@ offset_right = 54.0
 offset_bottom = 33.0
 text = "3"
 label_settings = SubResource("LabelSettings_8oumt")
+
+[node name="sfx_spawn_piece" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v6ibm")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

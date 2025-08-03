@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://j6rlujksnrsv"]
+[gd_scene load_steps=8 format=3 uid="uid://j6rlujksnrsv"]
 
 [ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_8x3ej"]
 [ext_resource type="Texture2D" uid="uid://bbjnl0gvngfgx" path="res://assets/StraightPipe.png" id="2_arpqm"]
 [ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/misc/electricity.tscn" id="3_1lj57"]
+[ext_resource type="AudioStream" uid="uid://cvokv5060hahb" path="res://assets/sfx/click.wav" id="4_1sore"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3ej"]
 
@@ -10,9 +11,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_arpqm"]
 
-[node name="Pipe" type="Node2D" node_paths=PackedStringArray("colliders") groups=["draggable"]]
+[node name="Pipe" type="Node2D" node_paths=PackedStringArray("colliders", "sfx_settled") groups=["draggable"]]
 script = ExtResource("1_8x3ej")
 colliders = [NodePath("Area2D/SendRight"), NodePath("Area2D4/SendLeft")]
+sfx_settled = NodePath("sfx_settled")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -66,6 +68,9 @@ shape = SubResource("CircleShape2D_arpqm")
 visible = false
 position = Vector2(-3, -1)
 points = PackedVector2Array(-61, 1, 67, 1)
+
+[node name="sfx_settled" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1sore")
 
 [connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
 [connection signal="mouse_entered" from="Area2D3" to="." method="_on_area_2d_mouse_entered"]
