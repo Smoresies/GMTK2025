@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpyyn6a8dbvfx"]
+[gd_scene load_steps=18 format=3 uid="uid://bpyyn6a8dbvfx"]
 
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="1_721jg"]
 [ext_resource type="Script" uid="uid://b445y0nu822h" path="res://scripts/main_menu.gd" id="1_geflf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jp0baknavkfs" path="res://assets/loop.png" id="6_crctu"]
 [ext_resource type="Texture2D" uid="uid://dunilqjnfog5l" path="res://assets/gmtk-game-jam-2025-logo-black.png" id="7_sn5u3"]
 [ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="8_sn5u3"]
+[ext_resource type="Script" uid="uid://dlqdvedwd8jei" path="res://scenes/levels/subtitle.gd" id="9_pwqr4"]
 [ext_resource type="AudioStream" uid="uid://drl8a8jimpaeg" path="res://assets/music/WIP_Circuit.ogg" id="10_wko7x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_keln3"]
@@ -48,6 +49,10 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_cn35j"]
 font = ExtResource("1_721jg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ohdsy"]
+font = ExtResource("1_721jg")
+font_color = Color(0.249128, 0.97, 0.0873, 1)
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_geflf")
@@ -231,6 +236,24 @@ texture = ExtResource("6_crctu")
 position = Vector2(643, 387)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_sn5u3")
+
+[node name="subtitle" type="Label" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -378.0
+offset_top = 387.0
+offset_right = 69.0
+offset_bottom = 472.0
+grow_horizontal = 2
+text = "Yeah we know the music
+doesn't fit... 
+
+But it goes hard no?"
+label_settings = SubResource("LabelSettings_ohdsy")
+script = ExtResource("9_pwqr4")
 
 [node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_sn5u3")
