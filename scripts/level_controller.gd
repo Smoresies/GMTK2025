@@ -15,6 +15,9 @@ func _ready():
 	# global.number_of_side_objectives = number_of_side_objectives
 	end.level_complete.connect(_trigger_end)
 	global.can_interact = true
+	global.expected_connections = 0
+	global.connections = 0
+	
 
 func _trigger_end():
 	### Brief pause for effect
@@ -28,6 +31,7 @@ func _trigger_end():
 	# See how many bulbs gotten vs total bulbs. 
 	# Subtract from 3, for number of bulbs at level end screen given
 	var bulbs = max(0, 3 - (global.number_of_side_objectives - global.side_objectives))
+	print(bulbs)
 	for i in range(0, bulbs):
 		match i:
 			0:
@@ -42,12 +46,15 @@ func _trigger_end():
 
 
 func _on_next_level_pressed() -> void:
+	global.number_of_side_objectives = 0
 	get_tree().change_scene_to_packed(nextLevel)
 
 
 func _on_main_menu_pressed() -> void:
+	global.number_of_side_objectives = 0
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
 
 
 func _on_retry_pressed() -> void:
+	global.number_of_side_objectives = 0
 	get_tree().reload_current_scene()
