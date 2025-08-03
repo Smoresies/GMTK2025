@@ -1,50 +1,53 @@
-[gd_scene load_steps=32 format=3 uid="uid://ccfk2xq5niafy"]
+[gd_scene load_steps=31 format=3 uid="uid://d18qpjuahfncl"]
 
-[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_cfbu6"]
-[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_bvftm"]
-[ext_resource type="PackedScene" uid="uid://d18qpjuahfncl" path="res://scenes/levels/level_7.tscn" id="2_uu8qo"]
-[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="3_4fymt"]
-[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_sb0xc"]
-[ext_resource type="Texture2D" uid="uid://svsgny3vj31m" path="res://assets/boards/CircuitCorner.png" id="5_uu8qo"]
-[ext_resource type="Texture2D" uid="uid://iixbcfy6itxx" path="res://assets/boards/CircuitEdge.png" id="6_3wtmn"]
-[ext_resource type="Texture2D" uid="uid://cij6bflbxu7rj" path="res://assets/boards/CircuitPipe.png" id="7_cbgmi"]
-[ext_resource type="PackedScene" uid="uid://drov7tf4sps1t" path="res://scenes/pieces/immobile_t_piece.tscn" id="8_x5ghr"]
-[ext_resource type="PackedScene" uid="uid://d2y6uucg4fxdw" path="res://scenes/pieces/side_objective.tscn" id="9_172fc"]
-[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="10_aq0d2"]
-[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="11_lynn5"]
-[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="12_d2xr8"]
-[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="13_k7ksp"]
-[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="14_mcllb"]
-[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="15_61ant"]
-[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="16_nryth"]
-[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="17_l04iu"]
-[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="18_j0hcr"]
-[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="19_u1jf6"]
-[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="20_bvftm"]
-[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="20_sb0xc"]
-[ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="21_4fymt"]
+[ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_aqqx4"]
+[ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_g13ha"]
+[ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="3_nonn3"]
+[ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_r4aal"]
+[ext_resource type="Texture2D" uid="uid://iixbcfy6itxx" path="res://assets/boards/CircuitEdge.png" id="6_64ngv"]
+[ext_resource type="PackedScene" uid="uid://yo63dhkr0wy4" path="res://scenes/pieces/ground.tscn" id="8_aqqx4"]
+[ext_resource type="PackedScene" uid="uid://d2y6uucg4fxdw" path="res://scenes/pieces/side_objective.tscn" id="9_4xx2j"]
+[ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="10_gyp50"]
+[ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="11_ejkkn"]
+[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="12_rt60r"]
+[ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="13_qx2c0"]
+[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="14_2nv2l"]
+[ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="15_4qlpv"]
+[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="16_3bjve"]
+[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="17_48u08"]
+[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="18_eqjcn"]
+[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="19_q2dvh"]
+[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="20_yg5nw"]
+[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="21_bjwri"]
+[ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="22_0xs0b"]
+[ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="22_g13ha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nonn3"]
+font = ExtResource("18_eqjcn")
+font_size = 24
+font_color = Color(0.249128, 0.97, 0.0873, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sb0xc"]
-font = ExtResource("17_l04iu")
+font = ExtResource("18_eqjcn")
 font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
-font = ExtResource("17_l04iu")
+font = ExtResource("18_eqjcn")
 font_size = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf2ju"]
-atlas = ExtResource("19_u1jf6")
+atlas = ExtResource("20_yg5nw")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hk3ny"]
-atlas = ExtResource("19_u1jf6")
+atlas = ExtResource("20_yg5nw")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y12jq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_j0hcr")
+"texture": ExtResource("19_q2dvh")
 }],
 "loop": true,
 "name": &"default",
@@ -63,18 +66,18 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uu8qo"]
-font = ExtResource("17_l04iu")
+font = ExtResource("18_eqjcn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_3wtmn"]
-font = ExtResource("17_l04iu")
+font = ExtResource("18_eqjcn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbgmi"]
-font = ExtResource("17_l04iu")
+font = ExtResource("18_eqjcn")
 
-[node name="Level6" type="Node" node_paths=PackedStringArray("end")]
-script = ExtResource("1_cfbu6")
+[node name="Level7" type="Node" node_paths=PackedStringArray("end")]
+script = ExtResource("1_aqqx4")
 end = NodePath("BaseBoard/End")
-nextLevel = ExtResource("2_uu8qo")
+nextLevel = null
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -85,125 +88,179 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1.27246e-06, 0.204613, 0.00162107, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 755.0
+offset_top = 11.0
+offset_right = 1265.0
+offset_bottom = 261.0
+color = Color(0.756863, 0.447059, 0.0784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+color = Color(0.42, 0.42, 0.42, 1)
+
+[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 7.0
+offset_right = 228.0
+offset_bottom = 190.0
+grow_horizontal = 2
+text = "New Challenger Approaches!!!
+
+Never Fear! Grounds are here! Those 
+dead ends are safe! Use them to your
+hearts content! 
+
+Your loop won't be broken with them!"
+label_settings = SubResource("LabelSettings_nonn3")
+
 [node name="BaseBoard" type="Node2D" parent="."]
 
-[node name="End" parent="BaseBoard" instance=ExtResource("2_bvftm")]
+[node name="End" parent="BaseBoard" instance=ExtResource("2_g13ha")]
 position = Vector2(704, 610)
 
-[node name="Start" parent="BaseBoard" instance=ExtResource("3_4fymt")]
+[node name="Start" parent="BaseBoard" instance=ExtResource("3_nonn3")]
 position = Vector2(576, 610)
 
 [node name="BoardSpaceList" type="Node2D" parent="BaseBoard"]
 
-[node name="BoardSpace2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
-position = Vector2(320, 610)
-texture = ExtResource("5_uu8qo")
+[node name="BoardSpace4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
+position = Vector2(960, 482)
 
-[node name="BoardSpace4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
-position = Vector2(960, 610)
-rotation = -1.5708
-texture = ExtResource("5_uu8qo")
-
-[node name="BoardSpace5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(448, 482)
 rotation = -1.5708
-texture = ExtResource("6_3wtmn")
+texture = ExtResource("6_64ngv")
 
-[node name="BoardSpace6" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace6" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(320, 482)
 rotation = 1.5708
-texture = ExtResource("6_3wtmn")
 
-[node name="BoardSpace7" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace7" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(832, 482)
 rotation = 1.5708
-texture = ExtResource("6_3wtmn")
+texture = ExtResource("6_64ngv")
 
-[node name="BoardSpace8" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
-position = Vector2(960, 482)
-rotation = -1.5708
-texture = ExtResource("6_3wtmn")
-
-[node name="BoardSpace23" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace23" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(448, 354)
+rotation = 3.14159
+texture = ExtResource("6_64ngv")
 
-[node name="BoardSpace25" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace25" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(320, 354)
 rotation = 1.5708
-texture = ExtResource("5_uu8qo")
 
-[node name="BoardSpace24" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace24" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(576, 354)
-texture = ExtResource("6_3wtmn")
 
-[node name="BoardSpace29" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
-position = Vector2(576, 228)
-
-[node name="BoardSpace30" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
-position = Vector2(448, 228)
-rotation = 3.14159
-texture = ExtResource("6_3wtmn")
-
-[node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace26" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(832, 354)
 rotation = 3.14159
-texture = ExtResource("6_3wtmn")
+texture = ExtResource("6_64ngv")
 
-[node name="BoardSpace28" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace28" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(960, 354)
 rotation = 3.14159
-texture = ExtResource("5_uu8qo")
+texture = ExtResource("6_64ngv")
 
-[node name="BoardSpace27" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_sb0xc")]
+[node name="BoardSpace27" parent="BaseBoard/BoardSpaceList" instance=ExtResource("4_r4aal")]
 position = Vector2(704, 354)
-texture = ExtResource("7_cbgmi")
+rotation = 3.14159
+texture = ExtResource("6_64ngv")
 
-[node name="ImmobileTPiece" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_x5ghr")]
-position = Vector2(832, 610)
-rotation = 1.5708
-
-[node name="ImmobileTPiece2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_x5ghr")]
-position = Vector2(448, 610)
-rotation = 1.5708
-
-[node name="SideObjective" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_172fc")]
-position = Vector2(320, 228)
+[node name="SideObjective" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_4xx2j")]
+position = Vector2(192, 482)
 rotation = -1.5708
 
-[node name="SideObjective2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_172fc")]
-position = Vector2(704, 228)
+[node name="SideObjective2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_4xx2j")]
+position = Vector2(1088, 354)
 rotation = 1.5708
 
-[node name="SideObjective3" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_172fc")]
-position = Vector2(576, 100)
+[node name="SideObjective3" parent="BaseBoard/BoardSpaceList" instance=ExtResource("9_4xx2j")]
+position = Vector2(576, 228)
 
-[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("10_aq0d2")]
+[node name="Ground" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(320, 609)
+rotation = 3.14159
+
+[node name="Ground7" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(960, 609)
+rotation = 3.14159
+
+[node name="Ground6" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(576, 482)
+rotation = 3.14159
+
+[node name="Ground4" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(704, 482)
+rotation = 3.14159
+
+[node name="Ground2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(192, 354)
+rotation = -1.5708
+
+[node name="Ground5" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(1088, 482)
+rotation = 1.5708
+
+[node name="Ground3" parent="BaseBoard/BoardSpaceList" instance=ExtResource("8_aqqx4")]
+position = Vector2(320, 228)
+
+[node name="ImmobileTurn" parent="BaseBoard/BoardSpaceList" instance=ExtResource("22_g13ha")]
+position = Vector2(448, 609)
+rotation = -3.14159
+
+[node name="ImmobileTurn2" parent="BaseBoard/BoardSpaceList" instance=ExtResource("22_g13ha")]
+position = Vector2(832, 609)
+rotation = 1.5708
+
+[node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("10_gyp50")]
+visible = false
 position = Vector2(35, 650)
 num_pieces = 4
 
-[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("10_aq0d2")]
+[node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("10_gyp50")]
+visible = false
 position = Vector2(35, 550)
-piece = ExtResource("11_lynn5")
+piece = ExtResource("11_ejkkn")
 num_pieces = 6
-sprite = ExtResource("12_d2xr8")
+sprite = ExtResource("12_rt60r")
 
-[node name="TSpawner" parent="BaseBoard" instance=ExtResource("10_aq0d2")]
-position = Vector2(35, 450)
-piece = ExtResource("13_k7ksp")
-sprite = ExtResource("14_mcllb")
+[node name="TSpawner" parent="BaseBoard" instance=ExtResource("10_gyp50")]
+position = Vector2(35, 678)
+piece = ExtResource("13_qx2c0")
+num_pieces = 8
+sprite = ExtResource("14_2nv2l")
 
-[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("10_aq0d2")]
-position = Vector2(35, 350)
-piece = ExtResource("15_61ant")
-num_pieces = 1
-sprite = ExtResource("16_nryth")
+[node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("10_gyp50")]
+position = Vector2(35, 578)
+piece = ExtResource("15_4qlpv")
+num_pieces = 2
+sprite = ExtResource("16_3bjve")
 
 [node name="Button" type="Button" parent="BaseBoard"]
 offset_left = 1102.0
 offset_top = 619.0
 offset_right = 1238.0
 offset_bottom = 691.0
-icon = ExtResource("20_sb0xc")
+icon = ExtResource("17_48u08")
 flat = true
 
 [node name="Label" type="Label" parent="BaseBoard/Button"]
@@ -321,7 +378,7 @@ offset_right = 68.0
 offset_bottom = -165.0
 grow_horizontal = 2
 grow_vertical = 0
-icon = ExtResource("20_sb0xc")
+icon = ExtResource("17_48u08")
 flat = true
 
 [node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel"]
@@ -353,7 +410,7 @@ offset_right = 68.0
 offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
-icon = ExtResource("20_sb0xc")
+icon = ExtResource("17_48u08")
 flat = true
 
 [node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Retry"]
@@ -385,7 +442,7 @@ offset_right = 68.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
-icon = ExtResource("20_sb0xc")
+icon = ExtResource("17_48u08")
 flat = true
 
 [node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu"]
@@ -405,10 +462,10 @@ text = "Main Menu"
 label_settings = SubResource("LabelSettings_cbgmi")
 
 [node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_bvftm")
+stream = ExtResource("21_bjwri")
 volume_db = -10.0
 
-[node name="bgm_player" parent="." instance=ExtResource("21_4fymt")]
+[node name="bgm_player" parent="." instance=ExtResource("22_0xs0b")]
 
 [connection signal="pressed" from="BaseBoard/Button" to="BaseBoard/Start" method="_on_button_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]

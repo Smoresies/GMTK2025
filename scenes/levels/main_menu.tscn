@@ -243,10 +243,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -378.0
-offset_top = 387.0
-offset_right = 69.0
-offset_bottom = 472.0
+offset_left = -344.0
+offset_top = 345.0
+offset_right = 103.0
+offset_bottom = 430.0
 grow_horizontal = 2
 text = "Yeah we know the music
 doesn't fit... 

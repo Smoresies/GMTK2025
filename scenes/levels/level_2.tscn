@@ -22,6 +22,11 @@
 [ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="19_p4se4"]
 [ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="20_sibr7"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_1c1qw"]
+font = ExtResource("12_1c1qw")
+font_size = 24
+font_color = Color(0.249128, 0.97, 0.0873, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_lkn2k"]
 font = ExtResource("12_1c1qw")
 font_size = 12
@@ -69,11 +74,6 @@ font = ExtResource("12_1c1qw")
 [sub_resource type="LabelSettings" id="LabelSettings_wikm6"]
 font = ExtResource("12_1c1qw")
 
-[sub_resource type="LabelSettings" id="LabelSettings_1c1qw"]
-font = ExtResource("12_1c1qw")
-font_size = 24
-font_color = Color(0.249128, 0.97, 0.0873, 1)
-
 [node name="Level2" type="Node" node_paths=PackedStringArray("end")]
 script = ExtResource("1_r88tb")
 end = NodePath("BaseBoard/End")
@@ -87,6 +87,48 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1.27246e-06, 0.204613, 0.00162107, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 740.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 249.0
+color = Color(0.756863, 0.447059, 0.0784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+color = Color(0.42, 0.42, 0.42, 1)
+
+[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 7.0
+offset_right = 228.0
+offset_bottom = 190.0
+grow_horizontal = 2
+text = "Corner Pieces not facing the right way?
+
+Press \"R\" to rotate! 
+
+You can rotate both held and placed
+circuits!"
+label_settings = SubResource("LabelSettings_1c1qw")
 
 [node name="BaseBoard" type="Node2D" parent="."]
 
@@ -356,48 +398,6 @@ stream = ExtResource("19_p4se4")
 volume_db = -10.0
 
 [node name="bgm_player" parent="." instance=ExtResource("20_sibr7")]
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 740.0
-offset_top = 24.0
-offset_right = 1250.0
-offset_bottom = 249.0
-color = Color(0.756863, 0.447059, 0.0784314, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
-layout_mode = 2
-color = Color(0.42, 0.42, 0.42, 1)
-
-[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
-texture_filter = 5
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -232.0
-offset_top = 7.0
-offset_right = 228.0
-offset_bottom = 190.0
-grow_horizontal = 2
-text = "Corner Pieces not facing the right way?
-
-Press \"R\" to rotate! 
-
-You can rotate both held and placed
-circuits!"
-label_settings = SubResource("LabelSettings_1c1qw")
 
 [connection signal="pressed" from="BaseBoard/Button" to="BaseBoard/Start" method="_on_button_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]
