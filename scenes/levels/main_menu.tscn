@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpyyn6a8dbvfx"]
+[gd_scene load_steps=15 format=3 uid="uid://bpyyn6a8dbvfx"]
 
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="1_721jg"]
 [ext_resource type="Script" uid="uid://b445y0nu822h" path="res://scripts/main_menu.gd" id="1_geflf"]
 [ext_resource type="PackedScene" uid="uid://cx5s0r32oxjn0" path="res://scenes/levels/level_1.tscn" id="2_fkd6t"]
 [ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="2_geflf"]
 [ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="3_fkd6t"]
+[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="6_cn35j"]
 [ext_resource type="Texture2D" uid="uid://jp0baknavkfs" path="res://assets/loop.png" id="6_crctu"]
 [ext_resource type="Texture2D" uid="uid://dunilqjnfog5l" path="res://assets/gmtk-game-jam-2025-logo-black.png" id="7_sn5u3"]
 [ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="8_sn5u3"]
@@ -43,6 +44,9 @@ animations = [{
 "name": &"lit",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cn35j"]
+font = ExtResource("1_721jg")
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_geflf")
@@ -150,6 +154,7 @@ animation = &"lit"
 autoplay = "lit"
 
 [node name="StartGame" type="Button" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -158,11 +163,31 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -45.0
 offset_top = -180.0
-offset_right = 45.0
+offset_right = 61.0
 offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Start Game!"
+icon = ExtResource("6_cn35j")
+flat = true
+clip_text = true
+
+[node name="Label" type="Label" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect/StartGame"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -11.5
+offset_right = 47.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game!"
+label_settings = SubResource("LabelSettings_cn35j")
 
 [node name="LevelSelect" type="Button" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 visible = false

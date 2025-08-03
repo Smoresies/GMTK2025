@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dyfl2f2t2auf3"]
+[gd_scene load_steps=26 format=3 uid="uid://dyfl2f2t2auf3"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_j18pg"]
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="1_lndbk"]
@@ -15,7 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="14_n737r"]
 [ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="15_lg6wu"]
 [ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="15_n737r"]
+[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="15_qf2ju"]
 [ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="16_lg6wu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qf2ju"]
+font = ExtResource("11_os2q3")
+font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_j18pg"]
 font = ExtResource("11_os2q3")
@@ -50,6 +55,15 @@ animations = [{
 "name": &"lit",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hk3ny"]
+font = ExtResource("11_os2q3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_y12jq"]
+font = ExtResource("11_os2q3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_34xvl"]
+font = ExtResource("11_os2q3")
 
 [node name="BaseLevel" type="Node" node_paths=PackedStringArray("end")]
 script = ExtResource("1_j18pg")
@@ -178,13 +192,32 @@ piece = ExtResource("9_n737r")
 sprite = ExtResource("10_lg6wu")
 
 [node name="Button" type="Button" parent="BaseBoard"]
-offset_left = 1095.0
-offset_top = 644.0
-offset_right = 1223.0
-offset_bottom = 675.0
+offset_left = 1102.0
+offset_top = 619.0
+offset_right = 1238.0
+offset_bottom = 691.0
+icon = ExtResource("15_qf2ju")
+flat = true
+
+[node name="Label" type="Label" parent="BaseBoard/Button"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -6.0
+offset_right = 75.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Check Solution!"
+label_settings = SubResource("LabelSettings_qf2ju")
 
 [node name="Level_Complete" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -275,13 +308,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -182.0
-offset_right = 48.0
-offset_bottom = -151.0
+offset_left = -68.0
+offset_top = -237.0
+offset_right = 68.0
+offset_bottom = -165.0
 grow_horizontal = 2
 grow_vertical = 0
+icon = ExtResource("15_qf2ju")
+flat = true
+
+[node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -11.5
+offset_right = 41.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Next Level"
+label_settings = SubResource("LabelSettings_hk3ny")
 
 [node name="Retry" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
@@ -290,13 +340,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -130.0
-offset_right = 48.0
-offset_bottom = -99.0
+offset_left = -68.0
+offset_top = -161.0
+offset_right = 68.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
+icon = ExtResource("15_qf2ju")
+flat = true
+
+[node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Retry"
+label_settings = SubResource("LabelSettings_y12jq")
 
 [node name="MainMenu" type="Button" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
@@ -305,13 +372,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -80.0
-offset_right = 48.0
-offset_bottom = -49.0
+offset_left = -68.0
+offset_top = -83.0
+offset_right = 68.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
+icon = ExtResource("15_qf2ju")
+flat = true
+
+[node name="Label" type="Label" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -11.5
+offset_right = 44.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Main Menu"
+label_settings = SubResource("LabelSettings_34xvl")
 
 [node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_n737r")

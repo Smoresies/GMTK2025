@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0e6p2sm7c4va"]
+[gd_scene load_steps=9 format=3 uid="uid://b0e6p2sm7c4va"]
 
 [ext_resource type="Script" uid="uid://c85utvmtdanpx" path="res://scripts/piece_spawner.gd" id="1_nvhmr"]
 [ext_resource type="PackedScene" uid="uid://j6rlujksnrsv" path="res://scenes/pieces/pipe.tscn" id="2_q5hwa"]
 [ext_resource type="Texture2D" uid="uid://bbjnl0gvngfgx" path="res://assets/StraightPipe.png" id="3_5cmve"]
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="4_5cmve"]
+[ext_resource type="Texture2D" uid="uid://b1nfolfcye3c6" path="res://assets/mask.png" id="4_ebf0e"]
 [ext_resource type="AudioStream" uid="uid://b54csh757er18" path="res://assets/sfx/misc_menu.wav" id="5_v6ibm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2enb5"]
@@ -18,6 +19,11 @@ piece = ExtResource("2_q5hwa")
 sprite = ExtResource("3_5cmve")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 1
+texture_filter = 1
+texture = ExtResource("4_ebf0e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 

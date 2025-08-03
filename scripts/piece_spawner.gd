@@ -5,7 +5,8 @@ extends Node2D
 @export var num_pieces : int = 3
 @export var sprite : CompressedTexture2D
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D/Sprite2D
+# @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var initialSize: Vector2 = scale
 @onready var label: Label = $Label
 @onready var sfx_spawn_piece: AudioStreamPlayer = $sfx_spawn_piece
