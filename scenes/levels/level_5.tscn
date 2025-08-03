@@ -217,7 +217,7 @@ rotation = -1.5708
 
 [node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_l8eod")]
 position = Vector2(35, 650)
-num_pieces = 4
+num_pieces = 1
 
 [node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_l8eod")]
 position = Vector2(35, 550)
@@ -228,7 +228,7 @@ sprite = ExtResource("7_fea5r")
 [node name="TSpawner" parent="BaseBoard" instance=ExtResource("5_l8eod")]
 position = Vector2(35, 450)
 piece = ExtResource("8_vm1kt")
-num_pieces = 2
+num_pieces = 1
 sprite = ExtResource("9_wnnhf")
 
 [node name="CrossSpawner" parent="BaseBoard" instance=ExtResource("5_l8eod")]
