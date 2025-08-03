@@ -1,34 +1,33 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpyyn6a8dbvfx"]
+[gd_scene load_steps=15 format=3 uid="uid://bu0p26h8iwhv3"]
 
-[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="1_721jg"]
-[ext_resource type="Script" uid="uid://b445y0nu822h" path="res://scripts/main_menu.gd" id="1_geflf"]
-[ext_resource type="PackedScene" uid="uid://cx5s0r32oxjn0" path="res://scenes/levels/level_1.tscn" id="2_fkd6t"]
-[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="2_geflf"]
-[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="3_fkd6t"]
-[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="6_cn35j"]
-[ext_resource type="Texture2D" uid="uid://jp0baknavkfs" path="res://assets/loop.png" id="6_crctu"]
-[ext_resource type="Texture2D" uid="uid://dunilqjnfog5l" path="res://assets/gmtk-game-jam-2025-logo-black.png" id="7_sn5u3"]
-[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="8_sn5u3"]
-[ext_resource type="AudioStream" uid="uid://drl8a8jimpaeg" path="res://assets/music/WIP_Circuit.ogg" id="10_wko7x"]
+[ext_resource type="Script" uid="uid://bc7dwh4m4kub7" path="res://scenes/levels/end_screen.gd" id="1_hjexk"]
+[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="3_uveu0"]
+[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="4_gs8ib"]
+[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="5_qm8jx"]
+[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="6_g8j0t"]
+[ext_resource type="Texture2D" uid="uid://jp0baknavkfs" path="res://assets/loop.png" id="7_5y04h"]
+[ext_resource type="Texture2D" uid="uid://dunilqjnfog5l" path="res://assets/gmtk-game-jam-2025-logo-black.png" id="8_1w4pf"]
+[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="9_c0du0"]
+[ext_resource type="AudioStream" uid="uid://drl8a8jimpaeg" path="res://assets/music/WIP_Circuit.ogg" id="10_nl57p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_keln3"]
-font = ExtResource("1_721jg")
+font = ExtResource("3_uveu0")
 font_size = 64
 font_color = Color(0.249128, 0.97, 0.0873, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf2ju"]
-atlas = ExtResource("3_fkd6t")
+atlas = ExtResource("5_qm8jx")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hk3ny"]
-atlas = ExtResource("3_fkd6t")
+atlas = ExtResource("5_qm8jx")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_721jg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_geflf")
+"texture": ExtResource("4_gs8ib")
 }],
 "loop": true,
 "name": &"default",
@@ -47,11 +46,10 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cn35j"]
-font = ExtResource("1_721jg")
+font = ExtResource("3_uveu0")
 
-[node name="MainMenu" type="Node"]
-script = ExtResource("1_geflf")
-nextLevel = ExtResource("2_fkd6t")
+[node name="EndScreen" type="Node"]
+script = ExtResource("1_hjexk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -130,6 +128,20 @@ grow_horizontal = 2
 text = "Circuit"
 label_settings = SubResource("LabelSettings_keln3")
 
+[node name="Label2" type="Label" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -319.0
+offset_top = 224.0
+offset_right = 377.0
+offset_bottom = 298.0
+grow_horizontal = 2
+text = "Thank you for Playing!"
+label_settings = SubResource("LabelSettings_keln3")
+
 [node name="Bulb1" type="AnimatedSprite2D" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 texture_filter = 1
 position = Vector2(70, 64)
@@ -154,7 +166,7 @@ sprite_frames = SubResource("SpriteFrames_721jg")
 animation = &"lit"
 autoplay = "lit"
 
-[node name="StartGame" type="Button" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
+[node name="MainMenu" type="Button" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
@@ -162,18 +174,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -180.0
-offset_right = 61.0
-offset_bottom = -149.0
+offset_left = -60.0
+offset_top = -154.0
+offset_right = 76.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Start Game!"
-icon = ExtResource("6_cn35j")
+icon = ExtResource("6_g8j0t")
 flat = true
 clip_text = true
 
-[node name="Label" type="Label" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect/StartGame"]
+[node name="Label" type="Label" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu"]
 texture_filter = 5
 layout_mode = 1
 anchors_preset = 8
@@ -181,63 +192,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -11.5
-offset_right = 47.5
-offset_bottom = 11.5
+offset_left = -46.0
+offset_top = -9.0
+offset_right = 49.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game!"
+text = "Main Menu"
 label_settings = SubResource("LabelSettings_cn35j")
-
-[node name="LevelSelect" type="Button" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -130.0
-offset_right = 48.0
-offset_bottom = -99.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Main Menu"
-
-[node name="MainMenu" type="Button" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -80.0
-offset_right = 48.0
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Main Menu"
 
 [node name="Loop" type="Sprite2D" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 texture_filter = 1
 position = Vector2(510, 184)
-texture = ExtResource("6_crctu")
+texture = ExtResource("7_5y04h")
 
 [node name="Gmtk-game-jam-2025-logo-black" type="Sprite2D" parent="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 position = Vector2(643, 387)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_sn5u3")
+texture = ExtResource("8_1w4pf")
 
 [node name="sfx_button_press" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_sn5u3")
+stream = ExtResource("9_c0du0")
 volume_db = -10.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_wko7x")
+stream = ExtResource("10_nl57p")
 autoplay = true
 
-[connection signal="pressed" from="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MainMenuPanel/HBoxContainer/ColorRect/MarginContainer/ColorRect/MainMenu" to="." method="_on_main_menu_pressed"]

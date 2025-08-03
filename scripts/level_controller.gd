@@ -50,7 +50,10 @@ func _on_next_level_pressed() -> void:
 	global.number_of_side_objectives = 0
 	sfx_button_press.play()
 	await sfx_button_press.finished
-	get_tree().change_scene_to_packed(nextLevel)
+	if nextLevel == null:
+		get_tree().change_scene_to_file("res://scenes/levels/end_screen.tscn")
+	else:
+		get_tree().change_scene_to_packed(nextLevel)
 
 
 func _on_main_menu_pressed() -> void:
