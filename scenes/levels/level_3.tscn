@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bbceudb224mlv"]
+[gd_scene load_steps=33 format=3 uid="uid://bbceudb224mlv"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_t4txi"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_apo5x"]
@@ -70,6 +70,11 @@ font = ExtResource("12_jql0x")
 
 [sub_resource type="LabelSettings" id="LabelSettings_do6pa"]
 font = ExtResource("12_jql0x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_n8qcm"]
+font = ExtResource("12_jql0x")
+font_size = 24
+font_color = Color(0.249128, 0.97, 0.0873, 1)
 
 [node name="Level3" type="Node" node_paths=PackedStringArray("end")]
 script = ExtResource("1_t4txi")
@@ -361,6 +366,48 @@ stream = ExtResource("21_5f5xw")
 volume_db = -10.0
 
 [node name="bgm_player" parent="." instance=ExtResource("22_o3ttr")]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 740.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 249.0
+color = Color(0.756863, 0.447059, 0.0784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+color = Color(0.42, 0.42, 0.42, 1)
+
+[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 7.0
+offset_right = 228.0
+offset_bottom = 190.0
+grow_horizontal = 2
+text = "You're doing great!
+
+Make sure you don't leave any stray
+connections lying around!
+
+It won't be a finished loop if so!"
+label_settings = SubResource("LabelSettings_n8qcm")
 
 [connection signal="pressed" from="BaseBoard/Button" to="BaseBoard/Start" method="_on_button_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]

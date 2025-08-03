@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bbj3hk8ikg7kg"]
+[gd_scene load_steps=33 format=3 uid="uid://bbj3hk8ikg7kg"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_j14br"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_0y7y4"]
@@ -70,6 +70,11 @@ font = ExtResource("12_orjhg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_3j2bn"]
 font = ExtResource("12_orjhg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lolfx"]
+font = ExtResource("12_orjhg")
+font_size = 24
+font_color = Color(0.249128, 0.97, 0.0873, 1)
 
 [node name="Level5" type="Node" node_paths=PackedStringArray("end")]
 script = ExtResource("1_j14br")
@@ -399,6 +404,49 @@ stream = ExtResource("21_vm1kt")
 volume_db = -10.0
 
 [node name="bgm_player" parent="." instance=ExtResource("22_wnnhf")]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 740.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 274.0
+color = Color(0.756863, 0.447059, 0.0784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+color = Color(0.42, 0.42, 0.42, 1)
+
+[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 7.0
+offset_right = 228.0
+offset_bottom = 190.0
+grow_horizontal = 2
+text = "Something new??? What are these?!?
+
+They're bulbs! No more free bulbs at the
+end of levels for you anymore! 
+
+Light all the bulbs to master the level!
+(They are optional... But recommended!)"
+label_settings = SubResource("LabelSettings_lolfx")
 
 [connection signal="pressed" from="BaseBoard/Button" to="BaseBoard/Start" method="_on_button_pressed"]
 [connection signal="pressed" from="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect/NextLevel" to="." method="_on_next_level_pressed"]

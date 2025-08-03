@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bu0p26h8iwhv3"]
 
-[ext_resource type="Script" uid="uid://bc7dwh4m4kub7" path="res://scenes/levels/end_screen.gd" id="1_hjexk"]
+[ext_resource type="Script" uid="uid://bc7dwh4m4kub7" path="res://scripts/end_screen.gd" id="1_hjexk"]
 [ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="3_uveu0"]
 [ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="4_gs8ib"]
 [ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="5_qm8jx"]
