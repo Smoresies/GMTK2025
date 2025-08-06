@@ -3,10 +3,11 @@ extends Node2D
 
 var draggable: bool = false
 var is_inside_droppable: bool = false
-var body_ref
+var body_ref : BoardSpace = null
+var last_body : BoardSpace = null
 var offset: Vector2
 var initialPos: Vector2
-var last_body : BoardSpace = null
+
 @onready var initialSize: Vector2 = scale
 @export var sfx_settled: AudioStreamPlayer
 
@@ -29,25 +30,41 @@ func _process(_delta):
 			emit_signal("deleting_self")
 			queue_free()
 			return
+			
+			
 		if Input.is_action_just_pressed("rotate"):
 			rotation_degrees += 90
+			
+			
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
+			
+			
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
 			if is_inside_droppable and body_ref:
-				var tween = get_tree().create_tween()
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+				### We were in a space AND the place we want to go has something there
+				if body_ref.held_piece and body_ref.held_piece != self:
+					print("BR held piece AND isn't us")
+					### First check if we have a previous space. If not, we cannot swap
+					if not last_body:
+						return
+					### If we do have a previous space then other piece can go there
+					body_ref.held_piece.update_pos(last_body.position)
+					### And we update its body_ref
+					body_ref.held_piece.body_ref = last_body
+				# Update our pos, play sfx, and update needed variables
+				update_pos(body_ref.position)
 				sfx_settled.play()
-				if last_body:
-					last_body.is_empty = true
+				# If the last body exists, holds a piece, and that piece is us!
+				if last_body and last_body.held_piece and last_body.held_piece == self:
+					# Tell it to no longer hold a piece
+					last_body.held_piece = null
 				last_body = body_ref
-				body_ref.is_empty = false
-				#body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+				body_ref.held_piece = self
 				body_ref = null
 			elif last_body: # Prevent weird offset bug
-				var tween = get_tree().create_tween()
-				tween.tween_property(self, "position", last_body.position, 0.2).set_ease(Tween.EASE_OUT)
+				update_pos(last_body.position)
 			#else:
 				#tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 			# draggable = false
@@ -66,15 +83,14 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("droppable") and body is BoardSpace:
-		if not body.is_empty:
-			return
+		#if not body.is_empty:
+			#return
 		is_inside_droppable = true
-		#body.modulate = Color(Color.REBECCA_PURPLE, 1)
-		#if body_ref != null:
-			#body_ref.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
 		body_ref = body
 
-
+func update_pos(pos: Vector2):
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", pos, 0.2).set_ease(Tween.EASE_OUT)
 # func _on_area_2d_body_exited(body: Node2D) -> void:
 	# if body.is_in_group("droppable"):
 		# is_inside_droppable = false

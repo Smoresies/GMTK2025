@@ -178,7 +178,7 @@ position = Vector2(832, 482)
 
 [node name="PipeSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 650)
-num_pieces = 2
+num_pieces = 1
 
 [node name="TurnSpawner" parent="BaseBoard" instance=ExtResource("5_fhpes")]
 position = Vector2(35, 550)

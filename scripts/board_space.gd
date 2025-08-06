@@ -6,17 +6,18 @@ extends StaticBody2D
 
 @export var texture : CompressedTexture2D = null
 var is_empty = true
+var held_piece : Draggable = null
 
 func _ready():
 	if texture:
 		sprite_2d.texture = texture
-	pass
+	
 	# modulate = Color(Color.MEDIUM_PURPLE, 0.7)
-
-func _process(_delta):
-	if global.is_dragging:
-		# visible = true
-		collision_shape_2d.disabled = false
-	else:
-		# visible = false
-		collision_shape_2d.disabled = true
+### Just always allow for the collision, no reason not to.
+#func _process(_delta):
+	#if global.is_dragging:
+		## visible = true
+		#collision_shape_2d.disabled = false
+	#else:
+		## visible = false
+		#collision_shape_2d.disabled = true
