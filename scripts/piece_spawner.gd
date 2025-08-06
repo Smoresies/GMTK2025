@@ -24,7 +24,9 @@ func _process(_delta: float) -> void:
 			num_pieces -= 1
 			label.text = str(num_pieces)
 			var new_piece = piece.instantiate()
-			new_piece.position = Vector2(global_position.x + 126, global_position.y)
+			new_piece.draggable = true
+			new_piece.position = get_viewport().get_mouse_position()
+			#new_piece.position = Vector2(global_position.x + 126, global_position.y)
 			new_piece.deleting_self.connect(_piece_deleted)
 			self.get_parent().add_child(new_piece)
 
@@ -42,6 +44,6 @@ func _on_area_2d_mouse_entered() -> void:
 
 
 func _on_area_2d_mouse_exited() -> void:
-	if not global.is_dragging:
+	if hovering:
 		hovering = false
 		scale = initialSize

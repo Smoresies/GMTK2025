@@ -25,7 +25,7 @@ func _process(_delta):
 				return
 		elif Input.is_action_just_pressed("right_click") and not global.is_dragging:
 			if last_body:
-				last_body.is_empty = true
+				last_body.held_piece = null
 				# print("Fixed the body!")
 			emit_signal("deleting_self")
 			queue_free()
@@ -37,6 +37,8 @@ func _process(_delta):
 			
 			
 		if Input.is_action_pressed("click"):
+			if not global.is_dragging:
+				global.is_dragging = true
 			global_position = get_global_mouse_position() - offset
 			
 			
@@ -52,13 +54,16 @@ func _process(_delta):
 					### If we do have a previous space then other piece can go there
 					body_ref.held_piece.update_pos(last_body.position)
 					### And we update its body_ref
-					body_ref.held_piece.body_ref = last_body
+					last_body.held_piece = body_ref.held_piece
+					last_body.held_piece.body_ref = last_body
+					
 				# Update our pos, play sfx, and update needed variables
 				update_pos(body_ref.position)
 				sfx_settled.play()
 				# If the last body exists, holds a piece, and that piece is us!
 				if last_body and last_body.held_piece and last_body.held_piece == self:
 					# Tell it to no longer hold a piece
+					# print("nulling last body")
 					last_body.held_piece = null
 				last_body = body_ref
 				body_ref.held_piece = self
@@ -72,8 +77,9 @@ func _process(_delta):
 
 func _on_area_2d_mouse_entered() -> void:
 	if not global.is_dragging:
+		# print("can drag!")
 		draggable = true
-		scale *= Vector2(1.05, 1.05)
+		scale = initialSize * Vector2(1.05, 1.05)
 
 
 func _on_area_2d_mouse_exited() -> void:
