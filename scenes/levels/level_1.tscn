@@ -125,7 +125,7 @@ offset_bottom = 190.0
 grow_horizontal = 2
 text = "Complete the Circuit's Loop!
 
-Click on the Spawners ->
+Click and drag on the Spawners ->
 in the bottom left to get Circuit Pieces!
 
 Then drag them in to finish the Loop!
@@ -137,7 +137,7 @@ label_settings = SubResource("LabelSettings_mqh5v")
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect2/MarginContainer/ColorRect"]
 clip_children = 1
 texture_filter = 1
-position = Vector2(314, 80)
+position = Vector2(423, 80)
 texture = ExtResource("21_ndtll")
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect2/MarginContainer/ColorRect/Sprite2D"]
