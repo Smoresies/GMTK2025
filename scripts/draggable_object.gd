@@ -45,7 +45,7 @@ func _process(_delta):
 			if is_inside_droppable and body_ref:
 				### We were in a space AND the place we want to go has something there
 				if body_ref.held_piece and body_ref.held_piece != self:
-					print("BR held piece AND isn't us")
+					# print("BR held piece AND isn't us")
 					### First check if we have a previous space. If not, we cannot swap
 					if not last_body:
 						return

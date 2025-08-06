@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c6gkupcg78wyd"]
+[gd_scene load_steps=32 format=3 uid="uid://c6gkupcg78wyd"]
 
 [ext_resource type="Script" uid="uid://cbja4pudfr4bh" path="res://scripts/level_controller.gd" id="1_fcb7b"]
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_ov8fk"]
@@ -22,6 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="20_12cdj"]
 [ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="20_beuva"]
 [ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="21_05se8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyomx"]
+font = ExtResource("12_0n65g")
+font_size = 24
+font_color = Color(0.249128, 0.97, 0.0873, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_12cdj"]
 font = ExtResource("12_0n65g")
@@ -83,6 +88,48 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1.27246e-06, 0.204613, 0.00162107, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 740.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 249.0
+color = Color(0.756863, 0.447059, 0.0784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+color = Color(0.42, 0.42, 0.42, 1)
+
+[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 12.0
+offset_right = 228.0
+offset_bottom = 195.0
+grow_horizontal = 2
+text = "It's going to get a bit harder from here
+on out! I know you're up to the task!
+
+If you find yourself stuck try using 
+Right-Click in order to return a circuit
+to the spawner!"
+label_settings = SubResource("LabelSettings_uyomx")
 
 [node name="BaseBoard" type="Node2D" parent="."]
 

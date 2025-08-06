@@ -5,7 +5,7 @@ extends StaticBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var texture : CompressedTexture2D = null
-var is_empty = true
+# var is_empty = true
 var held_piece : Draggable = null
 
 func _ready():
