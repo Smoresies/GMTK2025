@@ -12,6 +12,7 @@
 [node name="ImmobileCross" type="Node2D" node_paths=PackedStringArray("colliders") groups=["draggable"]]
 script = ExtResource("1_s5x2h")
 colliders = [NodePath("Area2D/SendDown"), NodePath("Area2D5/SendUp"), NodePath("Area2D4/SendLeft"), NodePath("Area2D6/SendRight")]
+is_immobile = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1

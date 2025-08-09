@@ -12,6 +12,7 @@
 [node name="ImmobileTurn" type="Node2D" node_paths=PackedStringArray("colliders") groups=["draggable"]]
 script = ExtResource("1_utqeg")
 colliders = [NodePath("Area2D/SendRight"), NodePath("Area2D4/SendLeft")]
+is_immobile = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1

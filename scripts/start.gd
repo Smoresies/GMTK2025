@@ -8,7 +8,7 @@ func _ready() -> void:
 	global.level_not_complete.connect(_reset)
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("space") and not global.is_dragging:
 		global.level_check.emit()
 		global.side_objectives = 0
 		collision_shape_2d.disabled = false
