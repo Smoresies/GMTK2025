@@ -18,7 +18,8 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_3d26k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4, 4)
+position = Vector2(64, 0)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xdx16")
 
 [node name="sfx_complete" type="AudioStreamPlayer" parent="."]
