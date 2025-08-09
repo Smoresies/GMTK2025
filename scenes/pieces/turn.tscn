@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddex43fkd7u5d"]
+[gd_scene load_steps=9 format=3 uid="uid://ddex43fkd7u5d"]
 
 [ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_ab3bn"]
 [ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="2_ab3bn"]
+[ext_resource type="Script" uid="uid://jueotgrirc2n" path="res://scripts/checker.gd" id="3_d8aws"]
 [ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/misc/electricity.tscn" id="3_idyx7"]
 [ext_resource type="AudioStream" uid="uid://cvokv5060hahb" path="res://assets/sfx/click.wav" id="4_owf7e"]
 
@@ -47,20 +48,22 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_8x3ej")
 
 [node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-64, 0)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("3_d8aws")
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-64, 0)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_ab3bn")
 
 [node name="Area2D5" type="Area2D" parent="."]
+position = Vector2(0, 64)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("3_d8aws")
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D5"]
-position = Vector2(0, 64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_ab3bn")
 
@@ -76,4 +79,6 @@ stream = ExtResource("4_owf7e")
 [connection signal="mouse_entered" from="Area2D3" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D3" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="area_shape_entered" from="Area2D2" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D2" to="Area2D2" method="_on_area_shape_entered"]
 [connection signal="area_shape_entered" from="Area2D5" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D5" to="Area2D5" method="_on_area_shape_entered"]

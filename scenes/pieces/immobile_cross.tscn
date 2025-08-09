@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://4upbgp64rkfq"]
+[gd_scene load_steps=8 format=3 uid="uid://4upbgp64rkfq"]
 
 [ext_resource type="Script" uid="uid://b6ddl13nsbc0k" path="res://scripts/pipe.gd" id="1_s5x2h"]
 [ext_resource type="Texture2D" uid="uid://dcl8raum3f1lc" path="res://assets/boards/Circuit.png" id="2_ujm26"]
 [ext_resource type="Texture2D" uid="uid://dof2vw0uuwobe" path="res://assets/ImmobileCross.png" id="3_ks02s"]
+[ext_resource type="Script" uid="uid://jueotgrirc2n" path="res://scripts/checker.gd" id="4_u5pbq"]
 [ext_resource type="PackedScene" uid="uid://bm2qt1birjd3m" path="res://scenes/misc/electricity.tscn" id="4_ujm26"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_832ky"]
@@ -23,38 +24,42 @@ texture_filter = 1
 texture = ExtResource("3_ks02s")
 
 [node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(64, 0)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("4_u5pbq")
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(64, 0)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D7" type="Area2D" parent="."]
+position = Vector2(-64, 0)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("4_u5pbq")
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D7"]
-position = Vector2(-64, 0)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D8" type="Area2D" parent="."]
+position = Vector2(0, 64)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("4_u5pbq")
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D8"]
-position = Vector2(0, 64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_832ky")
 
 [node name="Area2D9" type="Area2D" parent="."]
+position = Vector2(0, -64)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("4_u5pbq")
 
 [node name="Checker" type="CollisionShape2D" parent="Area2D9"]
-position = Vector2(0, -64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_832ky")
 
@@ -104,6 +109,10 @@ position = Vector2(-3, -1)
 points = PackedVector2Array(-61, 1, 2.84767, 1, 67, 1, 3, 1, 3, -64, 3, 64)
 
 [connection signal="area_shape_entered" from="Area2D2" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D2" to="Area2D2" method="_on_area_shape_entered"]
 [connection signal="area_shape_entered" from="Area2D7" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D7" to="Area2D7" method="_on_area_shape_entered"]
 [connection signal="area_shape_entered" from="Area2D8" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D8" to="Area2D8" method="_on_area_shape_entered"]
 [connection signal="area_shape_entered" from="Area2D9" to="." method="checker_triggered"]
+[connection signal="area_shape_entered" from="Area2D9" to="Area2D9" method="_on_area_shape_entered"]
