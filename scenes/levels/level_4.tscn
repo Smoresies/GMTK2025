@@ -126,9 +126,9 @@ grow_horizontal = 2
 text = "It's going to get a bit harder from here
 on out! I know you're up to the task!
 
-If you find yourself stuck try using 
-Right-Click in order to return a circuit
-to the spawner!"
+If you find yourself stuck you can
+return a piece to the spawner by 
+dragging it over the spawner!"
 label_settings = SubResource("LabelSettings_uyomx")
 
 [node name="BaseBoard" type="Node2D" parent="."]

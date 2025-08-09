@@ -12,12 +12,17 @@ extends Node2D
 @onready var sfx_spawn_piece: AudioStreamPlayer = $sfx_spawn_piece
 
 var hovering: bool = false
+var hover_piece: Draggable = null
 
 func _ready():
 	sprite_2d.texture = sprite
 	label.text = str(num_pieces)
 
 func _process(_delta: float) -> void:
+	if hover_piece and Input.is_action_just_released("click"):
+		hover_piece.delete()
+		hover_piece = null
+	
 	if hovering and global.can_interact:
 		if Input.is_action_just_pressed("click") and num_pieces > 0:
 			sfx_spawn_piece.play()
@@ -38,12 +43,24 @@ func _piece_deleted():
 
 
 func _on_area_2d_mouse_entered() -> void:
-	if not global.is_dragging:
-		hovering = true
-		scale *= Vector2(1.25, 1.25)
+	#if not global.is_dragging:
+	hovering = true
+	scale *= Vector2(1.25, 1.25)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	if hovering:
 		hovering = false
 		scale = initialSize
+
+
+### Another area enters
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Draggable:
+		hover_piece = area.get_parent()
+
+
+### Another area exits
+func _on_area_2d_area_exited(_area: Area2D) -> void:
+	if hover_piece:
+		hover_piece = null

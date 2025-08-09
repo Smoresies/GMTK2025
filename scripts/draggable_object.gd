@@ -23,14 +23,6 @@ func _process(_delta):
 			elif global.is_dragging:
 				draggable = false
 				return
-		elif Input.is_action_just_pressed("right_click") and not global.is_dragging:
-			if last_body:
-				last_body.held_piece = null
-				# print("Fixed the body!")
-			emit_signal("deleting_self")
-			queue_free()
-			return
-			
 			
 		if Input.is_action_just_pressed("rotate"):
 			rotation_degrees += 90
@@ -74,6 +66,12 @@ func _process(_delta):
 				#tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 			# draggable = false
 
+func delete():
+	if last_body:
+		last_body.held_piece = null
+		# print("Fixed the body!")
+	emit_signal("deleting_self")
+	queue_free()
 
 func _on_area_2d_mouse_entered() -> void:
 	if not global.is_dragging:
