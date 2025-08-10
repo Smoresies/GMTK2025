@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jp0baknavkfs" path="res://assets/loop.png" id="6_crctu"]
 [ext_resource type="Texture2D" uid="uid://dunilqjnfog5l" path="res://assets/gmtk-game-jam-2025-logo-black.png" id="7_sn5u3"]
 [ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="8_sn5u3"]
-[ext_resource type="Script" uid="uid://dlqdvedwd8jei" path="res://scenes/levels/subtitle.gd" id="9_pwqr4"]
+[ext_resource type="Script" uid="uid://dlqdvedwd8jei" path="res://scripts/subtitle.gd" id="9_pwqr4"]
 [ext_resource type="AudioStream" uid="uid://drl8a8jimpaeg" path="res://assets/music/WIP_Circuit.ogg" id="10_wko7x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_keln3"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2y6uucg4fxdw"]
+[gd_scene load_steps=6 format=3 uid="uid://d2y6uucg4fxdw"]
 
 [ext_resource type="Script" uid="uid://dpomp1irn0tlw" path="res://scripts/side_objective.gd" id="1_mtqag"]
 [ext_resource type="Texture2D" uid="uid://dqncxeg2t7e55" path="res://assets/sidebulb-Sheet.png" id="2_mtqag"]
@@ -6,24 +6,38 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
-[node name="SideObjective" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_me7am"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SideObjective" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_mtqag")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="SideObjective"]
 texture_filter = 1
 texture = ExtResource("2_mtqag")
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideObjective"]
 position = Vector2(0, 64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xdx16")
 
-[node name="Electricity" parent="." instance=ExtResource("3_sdfho")]
+[node name="Electricity" parent="SideObjective" instance=ExtResource("3_sdfho")]
 visible = false
 position = Vector2(7, 28)
 points = PackedVector2Array(-7, 35, -7, -12)
 
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 64)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_me7am")
+disabled = true
+
+[connection signal="area_shape_entered" from="SideObjective" to="SideObjective" method="_on_area_shape_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://yo63dhkr0wy4"]
+[gd_scene load_steps=6 format=3 uid="uid://yo63dhkr0wy4"]
 
 [ext_resource type="Script" uid="uid://ednrnqu122l0" path="res://scripts/ground.gd" id="1_mi8v4"]
 [ext_resource type="Texture2D" uid="uid://b08818gno1hpj" path="res://assets/ground.png" id="2_lmksl"]
@@ -6,23 +6,37 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdx16"]
 
-[node name="Ground" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("1_mi8v4")
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqsnl"]
+
+[node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_lmksl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Ground" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mi8v4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(0, 64)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_xdx16")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 64)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_sqsnl")
+disabled = true
 
 [node name="Electricity" parent="." instance=ExtResource("3_lmksl")]
 visible = false
 position = Vector2(7, 28)
 points = PackedVector2Array(-7, 35, -7, -12)
 
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_entered" from="Ground" to="Ground" method="_on_area_shape_entered"]
