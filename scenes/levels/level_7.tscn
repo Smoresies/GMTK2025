@@ -5,21 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://ddu00bxi35taq" path="res://scenes/misc/end.tscn" id="2_g13ha"]
 [ext_resource type="PackedScene" uid="uid://fwxgxoldgh70" path="res://scenes/misc/start.tscn" id="3_nonn3"]
 [ext_resource type="PackedScene" uid="uid://c4ru1ecd16jse" path="res://scenes/misc/board_space.tscn" id="4_r4aal"]
-[ext_resource type="Texture2D" uid="uid://dgap333bhcrq4" path="res://assets/boards/CircuitEdge.png" id="6_64ngv"]
+[ext_resource type="Texture2D" uid="uid://iixbcfy6itxx" path="res://assets/boards/CircuitEdge.png" id="6_64ngv"]
 [ext_resource type="PackedScene" uid="uid://yo63dhkr0wy4" path="res://scenes/pieces/ground.tscn" id="8_aqqx4"]
 [ext_resource type="PackedScene" uid="uid://d2y6uucg4fxdw" path="res://scenes/pieces/side_objective.tscn" id="9_4xx2j"]
 [ext_resource type="PackedScene" uid="uid://b0e6p2sm7c4va" path="res://scenes/misc/piece_spawner.tscn" id="10_gyp50"]
 [ext_resource type="PackedScene" uid="uid://ddex43fkd7u5d" path="res://scenes/pieces/turn.tscn" id="11_ejkkn"]
-[ext_resource type="Texture2D" uid="uid://b1r2uni2saaya" path="res://assets/TurnPipe.png" id="12_rt60r"]
+[ext_resource type="Texture2D" uid="uid://be5wgnhw3pr2s" path="res://assets/TurnPipe.png" id="12_rt60r"]
 [ext_resource type="PackedScene" uid="uid://bbkl7mhkbvsn7" path="res://scenes/pieces/t_piece.tscn" id="13_qx2c0"]
-[ext_resource type="Texture2D" uid="uid://cwi4l08tmfgio" path="res://assets/TPipe.png" id="14_2nv2l"]
+[ext_resource type="Texture2D" uid="uid://cwd71jjc53u3p" path="res://assets/TPipe.png" id="14_2nv2l"]
 [ext_resource type="PackedScene" uid="uid://dayysnfdinqpt" path="res://scenes/pieces/cross.tscn" id="15_4qlpv"]
-[ext_resource type="Texture2D" uid="uid://dinqq4kdeyb7l" path="res://assets/CrossPipe.png" id="16_3bjve"]
-[ext_resource type="Texture2D" uid="uid://dtphxoaqn7rc1" path="res://assets/CircuitButton.png" id="17_48u08"]
-[ext_resource type="FontFile" uid="uid://c2j3cpeu21c34" path="res://assets/fonts/Nobile-Regular.ttf" id="18_eqjcn"]
-[ext_resource type="Texture2D" uid="uid://blci66wmhtt3s" path="res://assets/Bulb.png" id="19_q2dvh"]
-[ext_resource type="Texture2D" uid="uid://be4remgbb568n" path="res://assets/LitBulb-Sheet.png" id="20_yg5nw"]
-[ext_resource type="AudioStream" uid="uid://b84ennf0qur4j" path="res://assets/sfx/sharp_echo.wav" id="21_bjwri"]
+[ext_resource type="Texture2D" uid="uid://cwkh8uxg6nsrt" path="res://assets/CrossPipe.png" id="16_3bjve"]
+[ext_resource type="Texture2D" uid="uid://dtm5jr52fprr7" path="res://assets/CircuitButton.png" id="17_48u08"]
+[ext_resource type="FontFile" uid="uid://cfdsh57g6n2p4" path="res://assets/fonts/Nobile-Regular.ttf" id="18_eqjcn"]
+[ext_resource type="Texture2D" uid="uid://bw3n7mxq5lowh" path="res://assets/Bulb.png" id="19_q2dvh"]
+[ext_resource type="Texture2D" uid="uid://17jqlok0lmgp" path="res://assets/LitBulb-Sheet.png" id="20_yg5nw"]
+[ext_resource type="AudioStream" uid="uid://c1i8oqx7pjend" path="res://assets/sfx/sharp_echo.wav" id="21_bjwri"]
 [ext_resource type="PackedScene" uid="uid://4k4pr43p0e6k" path="res://scenes/misc/bgm_player.tscn" id="22_0xs0b"]
 [ext_resource type="PackedScene" uid="uid://cgfigq21gl1gm" path="res://scenes/pieces/immobile_turn.tscn" id="22_g13ha"]
 
@@ -351,6 +351,7 @@ texture_filter = 1
 position = Vector2(68, 176)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_y12jq")
+animation = &"lit"
 
 [node name="Bulb2" type="AnimatedSprite2D" parent="Level_Complete/HBoxContainer/ColorRect/MarginContainer/ColorRect"]
 texture_filter = 1
